@@ -3,147 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menno de Vries - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        header p {
-            font-size: 1.1rem;
-            color: #0f9d9f;
-        }
-        
-        nav {
-            background: #0f9d9f;
-            padding: 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav a {
-            display: inline-block;
-            color: white;
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-        
-        nav a:hover {
-            background: #0d7a7d;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-        
-        .section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section h2 {
-            color: #1a1a2e;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid #0f9d9f;
-            padding-bottom: 0.5rem;
-        }
-        
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-        
-        .skill-tag {
-            background: #0f9d9f;
-            color: white;
-            padding: 0.7rem;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-        }
-        
-        footer {
-            text-align: center;
-            color: #fff;
-            background: #1a1a2e;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-    </style>
+    <title>Home | Menno de Vries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Menno de Vries</h1>
-        <p>Game Developer | Cybersecurity & Cloud Student</p>
-    </header>
-    
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Projecten.html">Projecten</a>
-        <a href="Cybersecurity.html">Cybersecurity</a>
-        <a href="Blog.html">Blog</a>
-        <a href="Contact.html">Contact</a>
-    </nav>
-    
-    <main class="container">
-        <section class="section">
-            <h2>Over Mij</h2>
-            <p>Welkom op mijn portfolio! Ik ben een passionele developer met achtergrond in game development. Momenteel ben ik aan het studeren aan de Hogeschool Utrecht, waar ik me verdiep in Cybersecurity en Cloud technologieën. Dit unieke combinatie van creativiteit en veiligheid drijft mijn professionele groei aan.</p>
-        </section>
-        
-        <section class="section">
-            <h2>Vaardigheden</h2>
-            <div class="skills">
-                <div class="skill-tag">Game Development</div>
-                <div class="skill-tag">Cybersecurity</div>
-                <div class="skill-tag">Cloud Computing</div>
-                <div class="skill-tag">C#</div>
-                <div class="skill-tag">Azure</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">Network Security</div>
-                <div class="skill-tag">HTML/CSS</div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="header-top">
+                <a class="brand" href="index.html">Menno de Vries</a>
+                <p class="role">Game Developer | Cybersecurity & Cloud Student</p>
             </div>
-        </section>
-        
-        <section class="section">
-            <h2>Huidige Studie</h2>
-            <p><strong>Hogeschool Utrecht</strong></p>
-            <p>Cybersecurity & Cloud specialisatie - focussing op beveiligde systemen en cloud infrastructuur.</p>
-        </section>
+            <nav class="site-nav" aria-label="Hoofdnavigatie">
+                <a class="is-active" href="index.html">Home</a>
+                <a href="Projecten.html">Projecten</a>
+                <a href="Cybersecurity.html">Cybersecurity</a>
+                <a href="Blog.html">Blog</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Portfolio van Menno de Vries</h1>
+                <p>Ik bouw graag aan technische oplossingen op het snijvlak van software, beveiliging en cloud. Op deze website vind je mijn projecten, leerdoelen en praktijkervaring.</p>
+            </section>
+
+            <section class="section">
+                <h2>Over mij</h2>
+                <p>Ik heb een achtergrond in game development en volg momenteel een specialisatie in Cybersecurity & Cloud aan de Hogeschool Utrecht. Die combinatie helpt mij om zowel creatief als security-first te ontwerpen.</p>
+            </section>
+
+            <section class="section">
+                <h2>Vaardigheden</h2>
+                <ul class="skills">
+                    <li>Game Development</li>
+                    <li>Cybersecurity</li>
+                    <li>Cloud Computing</li>
+                    <li>C#</li>
+                    <li>Python</li>
+                    <li>Azure</li>
+                    <li>Network Security</li>
+                    <li>HTML/CSS</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Focus in 2026</h2>
+                <div class="grid two">
+                    <article class="card">
+                        <h3>Secure cloud omgevingen</h3>
+                        <p>Ontwerpen en beheren van veilig geconfigureerde cloud infrastructuren met aandacht voor monitoring, identity en compliance.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Praktische security skills</h3>
+                        <p>Verder verdiepen in pentesting, netwerkbeveiliging en incidentrespons met focus op realistische use-cases.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
     </main>
-    
-    <footer>
-        <p>&copy; 2024 Menno de Vries. Alle rechten voorbehouden.</p>
+
+    <footer class="footer">
+        <p>&copy; 2026 Menno de Vries. Alle rechten voorbehouden.</p>
     </footer>
 </body>
 </html>

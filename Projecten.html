@@ -3,128 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projecten - Menno de Vries</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        header p {
-            font-size: 1.1rem;
-            color: #0f9d9f;
-        }
-        
-        nav {
-            background: #0f9d9f;
-            padding: 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav a {
-            display: inline-block;
-            color: white;
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-        
-        nav a:hover {
-            background: #0d7a7d;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-        
-        .section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section h2 {
-            color: #1a1a2e;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid #0f9d9f;
-            padding-bottom: 0.5rem;
-        }
-        
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-        
-        .skill-tag {
-            background: #0f9d9f;
-            color: white;
-            padding: 0.7rem;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-        }
-        
-        footer {
-            text-align: center;
-            color: #fff;
-            background: #1a1a2e;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-    </style>
+    <title>Projecten | Menno de Vries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Menno de Vries</h1>
-        <p>Game Developer | Cybersecurity & Cloud Student</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="header-top">
+                <a class="brand" href="index.html">Menno de Vries</a>
+                <p class="role">Game Developer | Cybersecurity & Cloud Student</p>
+            </div>
+            <nav class="site-nav" aria-label="Hoofdnavigatie">
+                <a href="index.html">Home</a>
+                <a class="is-active" href="Projecten.html">Projecten</a>
+                <a href="Cybersecurity.html">Cybersecurity</a>
+                <a href="Blog.html">Blog</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
-    
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#home">Projecten</a>
-        <a href="#cybersecurity">Cybersecurity</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    
-    <main class="container">
-        <section class="section">
-            <h2>Mijn Projecten</h2>
-            <p>Hier vind je een overzicht van mijn projecten. Van game development tot cybersecurity projecten.</p>
-            <!-- Jouw projecten content hier -->
-        </section>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Projecten</h1>
+                <p>Een selectie van werk waarin softwareontwikkeling, security en cloud samenkomen. Deze pagina groeit mee met nieuwe projecten.</p>
+            </section>
+
+            <section class="section">
+                <h2>Uitgelichte projecten</h2>
+                <div class="grid two">
+                    <article class="card">
+                        <p class="meta">Cybersecurity</p>
+                        <h3>Netwerk hardening lab</h3>
+                        <p>Opzetten en beveiligen van een testnetwerk met segmentatie, firewallregels en basis logging voor threat analysis.</p>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Cloud</p>
+                        <h3>Azure deployment pipeline</h3>
+                        <p>Inrichten van een deploymentflow voor webapplicaties, inclusief versiebeheer, rollback aanpak en basis security checks.</p>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Game Development</p>
+                        <h3>Prototype gameplay systeem</h3>
+                        <p>Modulaire gameplay logica ontwikkeld in C# met focus op onderhoudbaarheid en duidelijke projectstructuur.</p>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Security Awareness</p>
+                        <h3>Mini training phishing</h3>
+                        <p>Praktische oefening om phishing patronen te herkennen, inclusief voorbeelden en checklist voor veilig handelen.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
     </main>
-    
-    <footer>
-        <p>&copy; 2024 Menno de Vries. Alle rechten voorbehouden.</p>
+
+    <footer class="footer">
+        <p>&copy; 2026 Menno de Vries. Alle rechten voorbehouden.</p>
     </footer>
 </body>
 </html>
