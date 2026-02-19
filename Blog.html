@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menno de Vries - Portfolio</title>
+    <title>Blog - Menno de Vries</title>
     <style>
         * {
             margin: 0;
@@ -92,6 +92,27 @@
             font-weight: bold;
         }
         
+        .blog-post {
+            margin: 2rem 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+        
+        .blog-post h3 {
+            color: #0f9d9f;
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
         footer {
             text-align: center;
             color: #fff;
@@ -117,28 +138,20 @@
     
     <main class="container">
         <section class="section">
-            <h2>Over Mij</h2>
-            <p>Welkom op mijn portfolio! Ik ben een passionele developer met achtergrond in game development. Momenteel ben ik aan het studeren aan de Hogeschool Utrecht, waar ik me verdiep in Cybersecurity en Cloud technologieën. Dit unieke combinatie van creativiteit en veiligheid drijft mijn professionele groei aan.</p>
-        </section>
-        
-        <section class="section">
-            <h2>Vaardigheden</h2>
-            <div class="skills">
-                <div class="skill-tag">Game Development</div>
-                <div class="skill-tag">Cybersecurity</div>
-                <div class="skill-tag">Cloud Computing</div>
-                <div class="skill-tag">C#</div>
-                <div class="skill-tag">Azure</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">Network Security</div>
-                <div class="skill-tag">HTML/CSS</div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Huidige Studie</h2>
-            <p><strong>Hogeschool Utrecht</strong></p>
-            <p>Cybersecurity & Cloud specialisatie - focussing op beveiligde systemen en cloud infrastructuur.</p>
+            <h2>Blog</h2>
+            <p>Lees mijn gedachten en ervaringen over game development, cybersecurity en cloud-technologieën.</p>
+            
+            <article class="blog-post">
+                <h3>Mijn eerste cybersecurity project</h3>
+                <p class="blog-date">Januari 2026</p>
+                <p>Dit was mijn eerste project in het cybersecurity domein waar ik een netwerkinfrastructuur heb gereviseerd...</p>
+            </article>
+            
+            <article class="blog-post">
+                <h3>Game Development op de Cloud</h3>
+                <p class="blog-date">December 2025</p>
+                <p>Ik heb geëxperimenteerd met het hosten van game servers op Azure en dit waren de bevindingen...</p>
+            </article>
         </section>
     </main>
     
