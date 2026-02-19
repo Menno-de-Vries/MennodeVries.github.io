@@ -30,32 +30,111 @@
         <div class="container">
             <section class="hero">
                 <h1>Projecten</h1>
-                <p>Een selectie van werk waarin softwareontwikkeling, security en cloud samenkomen. Deze pagina groeit mee met nieuwe projecten.</p>
+                <p>Overzicht van projecten binnen Cybersecurity en Game Development, gestructureerd per domein met duidelijke focus en technologiekeuzes.</p>
             </section>
 
             <section class="section">
-                <h2>Uitgelichte projecten</h2>
-                <div class="grid two">
-                    <article class="card">
-                        <p class="meta">Cybersecurity</p>
-                        <h3>Netwerk hardening lab</h3>
-                        <p>Opzetten en beveiligen van een testnetwerk met segmentatie, firewallregels en basis logging voor threat analysis.</p>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Cloud</p>
-                        <h3>Azure deployment pipeline</h3>
-                        <p>Inrichten van een deploymentflow voor webapplicaties, inclusief versiebeheer, rollback aanpak en basis security checks.</p>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Game Development</p>
-                        <h3>Prototype gameplay systeem</h3>
-                        <p>Modulaire gameplay logica ontwikkeld in C# met focus op onderhoudbaarheid en duidelijke projectstructuur.</p>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Security Awareness</p>
-                        <h3>Mini training phishing</h3>
-                        <p>Praktische oefening om phishing patronen te herkennen, inclusief voorbeelden en checklist voor veilig handelen.</p>
-                    </article>
+                <h2>Cybersecurity Projecten</h2>
+                <div class="project-group">
+                    <div class="project-grid">
+                        <article class="card project-card">
+                            <p class="meta">Cybersecurity</p>
+                            <h3>Netwerk Hardening Lab</h3>
+                            <p>Segmentatie van een testnetwerk met firewall policies, veilige baseline configuraties en logging voor incidentanalyse.</p>
+                            <div class="project-tech">
+                                <span>Firewall</span>
+                                <span>VLAN</span>
+                                <span>SIEM basics</span>
+                            </div>
+                        </article>
+                        <article class="card project-card">
+                            <p class="meta">Cloud Security</p>
+                            <h3>Azure Security Baseline</h3>
+                            <p>Beveiligen van cloud resources met rolgebaseerde toegang, policy checks en monitoring van verdachte wijzigingen.</p>
+                            <div class="project-tech">
+                                <span>Azure</span>
+                                <span>RBAC</span>
+                                <span>Defender</span>
+                            </div>
+                        </article>
+                        <article class="card project-card">
+                            <p class="meta">Awareness</p>
+                            <h3>Phishing Simulatie</h3>
+                            <p>Praktische simulatie met scenario's, herkenning van indicatoren en evaluatie van respons op social engineering.</p>
+                            <div class="project-tech">
+                                <span>OSINT</span>
+                                <span>Awareness</span>
+                                <span>Rapportage</span>
+                            </div>
+                        </article>
+                        <article class="card project-card">
+                            <p class="meta">Security Operations</p>
+                            <h3>Incident Response Oefening</h3>
+                            <p>Opstellen van een gestructureerde responseflow van detectie tot herstel, inclusief lessons learned en opvolgacties.</p>
+                            <div class="project-tech">
+                                <span>Playbooks</span>
+                                <span>MITRE ATT&CK</span>
+                                <span>Postmortem</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Game Development Projecten</h2>
+                <p>De kaarten hieronder zijn interactief: ze zoomen in op hover en gaan automatisch terug naar normaal zodra je de muis eraf haalt.</p>
+                <div class="project-group">
+                    <div class="project-grid">
+                        <article class="card project-card game-card">
+                            <p class="meta">Game Development</p>
+                            <h3>Modulair Gameplay Systeem</h3>
+                            <div class="project-tech">
+                                <span>C#</span>
+                                <span>Unity</span>
+                                <span>Architecture</span>
+                            </div>
+                            <div class="project-actions">
+                                <a class="btn btn-small" href="#">Bekijk project</a>
+                            </div>
+                        </article>
+                        <article class="card project-card game-card">
+                            <p class="meta">Systems Design</p>
+                            <h3>AI Behaviour Prototype</h3>
+                            <div class="project-tech">
+                                <span>FSM</span>
+                                <span>Pathfinding</span>
+                                <span>Debug tools</span>
+                            </div>
+                            <div class="project-actions">
+                                <a class="btn btn-small" href="#">Bekijk project</a>
+                            </div>
+                        </article>
+                        <article class="card project-card game-card">
+                            <p class="meta">Multiplayer</p>
+                            <h3>Co-op Match Prototype</h3>
+                            <div class="project-tech">
+                                <span>Netcode</span>
+                                <span>Sync</span>
+                                <span>Latency tests</span>
+                            </div>
+                            <div class="project-actions">
+                                <a class="btn btn-small" href="#">Bekijk project</a>
+                            </div>
+                        </article>
+                        <article class="card project-card game-card">
+                            <p class="meta">Performance</p>
+                            <h3>Rendering Optimalisatie</h3>
+                            <div class="project-tech">
+                                <span>Profiling</span>
+                                <span>GPU/CPU</span>
+                                <span>Optimization</span>
+                            </div>
+                            <div class="project-actions">
+                                <a class="btn btn-small" href="#">Bekijk project</a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
         </div>
