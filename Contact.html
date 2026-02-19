@@ -165,7 +165,10 @@
             <h2>Contacteer Mij</h2>
             <p>Heb je vragen of wil je samen aan een project werken? Vul het formulier in en ik neem contact met je op!</p>
             
-            <form class="contact-form">
+            <form class="contact-form" action="menno.de.vries302@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Nieuw bericht via contactformulier">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
                 <div class="form-group">
                     <label for="name">Naam:</label>
                     <input type="text" id="name" name="name" required>
