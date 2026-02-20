@@ -227,6 +227,20 @@ main {
     font-size: 0.9rem;
 }
 
+.blog-card-actions {
+    margin-top: 0.9rem;
+}
+
+.blog-open-btn {
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-open-btn:hover,
+.blog-open-btn:focus-visible {
+    transform: scale(1.08);
+    box-shadow: 0 10px 22px rgba(8, 43, 66, 0.25);
+}
+
 .game-card {
     transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     transform-origin: center;
