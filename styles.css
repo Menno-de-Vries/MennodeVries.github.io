@@ -536,6 +536,11 @@ body.is-touch-device .code-card pre {
     min-width: 980px;
 }
 
+body.is-touch-device .code-card code {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .checklist {
     list-style: none;
     display: grid;

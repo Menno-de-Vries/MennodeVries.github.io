@@ -228,6 +228,55 @@
 
         updateScrollHintVisibility();
         window.addEventListener("resize", updateScrollHintVisibility);
+
+        // Touch assist: make horizontal swipe in the code area reliable on mobile browsers.
+        const attachHorizontalTouchAssist = (scrollElement) => {
+            if (!scrollElement || !document.body.classList.contains("is-touch-device")) return;
+
+            let startX = 0;
+            let startY = 0;
+            let startLeft = 0;
+            let isTouching = false;
+            let isHorizontalGesture = false;
+
+            scrollElement.addEventListener("touchstart", (event) => {
+                if (event.touches.length !== 1) return;
+                const touch = event.touches[0];
+                isTouching = true;
+                isHorizontalGesture = false;
+                startX = touch.clientX;
+                startY = touch.clientY;
+                startLeft = scrollElement.scrollLeft;
+            }, { passive: true });
+
+            scrollElement.addEventListener("touchmove", (event) => {
+                if (!isTouching || event.touches.length !== 1) return;
+                const touch = event.touches[0];
+                const deltaX = touch.clientX - startX;
+                const deltaY = touch.clientY - startY;
+
+                if (!isHorizontalGesture) {
+                    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                        isHorizontalGesture = true;
+                    } else {
+                        return;
+                    }
+                }
+
+                event.preventDefault();
+                scrollElement.scrollLeft = startLeft - deltaX;
+            }, { passive: false });
+
+            const resetTouchState = () => {
+                isTouching = false;
+                isHorizontalGesture = false;
+            };
+
+            scrollElement.addEventListener("touchend", resetTouchState, { passive: true });
+            scrollElement.addEventListener("touchcancel", resetTouchState, { passive: true });
+        };
+
+        attachHorizontalTouchAssist(codeScroll);
     </script>
 </body>
 </html>
