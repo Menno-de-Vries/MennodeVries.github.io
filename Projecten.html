@@ -31,7 +31,9 @@
                         <option value="en">English</option>
                         <option value="de">Deutsch</option>
                     </select>
-                </div>            </nav>
+                </div>
+                <button class="theme-toggle js-theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+            </nav>
         </div>
     </header>
 
@@ -45,6 +47,11 @@
             <section class="section">
                 <h2>Cybersecurity Projecten</h2>
                 <div class="project-group">
+                    <article class="card">
+                        <h3>Nog geen projecten beschikbaar</h3>
+                        <p>Er zijn op dit moment nog geen cybersecurity projecten beschikbaar. Deze sectie wordt bijgewerkt zodra nieuwe projecten live staan.</p>
+                    </article>
+                    <!--
                     <div class="project-grid">
                         <article class="card project-card game-card">
                             <p class="meta">Cybersecurity</p>
@@ -55,9 +62,6 @@
                                 <span>VLAN</span>
                                 <span>SIEM basics</span>
                             </div>
-                            <!-- <div class="project-actions">
-                                <a class="btn btn-small" href="#">Bekijk project</a>
-                            </div> -->
                         </article>
                         <article class="card project-card game-card">
                             <p class="meta">Cloud Security</p>
@@ -68,9 +72,6 @@
                                 <span>RBAC</span>
                                 <span>Defender</span>
                             </div>
-                            <!-- <div class="project-actions">
-                                <a class="btn btn-small" href="#">Bekijk project</a>
-                            </div> -->
                         </article>
                         <article class="card project-card game-card">
                             <p class="meta">Awareness</p>
@@ -81,9 +82,6 @@
                                 <span>Awareness</span>
                                 <span>Rapportage</span>
                             </div>
-                            <!-- <div class="project-actions">
-                                <a class="btn btn-small" href="#">Bekijk project</a>
-                            </div> -->
                         </article>
                         <article class="card project-card game-card">
                             <p class="meta">Security Operations</p>
@@ -94,11 +92,9 @@
                                 <span>MITRE ATT&CK</span>
                                 <span>Postmortem</span>
                             </div>
-                            <!-- <div class="project-actions">
-                                <a class="btn btn-small" href="#">Bekijk project</a>
-                            </div> -->
                         </article>
                     </div>
+                    -->
                 </div>
             </section>
 
@@ -107,7 +103,7 @@
                 <p>De kaarten hieronder zijn interactief: ze zoomen in op hover en gaan automatisch terug naar normaal zodra je de muis eraf haalt.</p>
                 <div class="project-group">
                     <div class="project-grid">
-                        <article class="card project-card game-card">
+                        <a class="card project-card game-card project-card-link" href="Unity_Project_1/Unity_project1.html">
                             <p class="meta">Game Development</p>
                             <h3>Modulair Gameplay Systeem</h3>
                             <div class="project-tech">
@@ -115,10 +111,11 @@
                                 <span>Unity</span>
                                 <span>Architecture</span>
                             </div>
-                            <div class="project-actions">
-                                <a class="btn btn-small" href="Unity_Project_1/Unity_project1.html">Bekijk project</a>
+                            <div class="blog-card-actions">
+                                <span class="blog-card-hint">Klik op deze kaart om het project te openen</span>
                             </div>
-                        </article>
+                        </a>
+                        <!--
                         <article class="card project-card game-card">
                             <p class="meta">Systems Design</p>
                             <h3>AI Behaviour Prototype</h3>
@@ -127,9 +124,6 @@
                                 <span>Pathfinding</span>
                                 <span>Debug tools</span>
                             </div>
-                            <!-- <div class="project-actions">
-                                <a class="btn btn-small" href="#">Bekijk project</a>
-                            </div> -->
                         </article>
                         <article class="card project-card game-card">
                             <p class="meta">Multiplayer</p>
@@ -139,9 +133,6 @@
                                 <span>Sync</span>
                                 <span>Latency tests</span>
                             </div>
-                            <!-- <div class="project-actions">
-                                <a class="btn btn-small" href="#">Bekijk project</a>
-                            </div> -->
                         </article>
                         <article class="card project-card game-card">
                             <p class="meta">Performance</p>
@@ -151,10 +142,8 @@
                                 <span>GPU/CPU</span>
                                 <span>Optimization</span>
                             </div>
-                            <!-- <div class="project-actions">
-                                <a class="btn btn-small" href="#">Bekijk project</a>
-                            </div> -->
                         </article>
+                        -->
                     </div>
                 </div>
             </section>
@@ -166,8 +155,11 @@
     </footer>
     <div id="google_translate_element" class="google-translate-hidden" aria-hidden="true"></div>
     <script src="language-switcher.js" defer></script>
+    <script src="theme-toggle.js" defer></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script></body>
 </html>
+
+
 
 
 
