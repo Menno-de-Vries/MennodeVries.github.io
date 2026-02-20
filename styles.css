@@ -483,15 +483,8 @@ textarea:focus {
     font-size: 0.86rem;
 }
 
-.code-scroll {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
-    overscroll-behavior-x: contain;
-    scrollbar-gutter: stable both-edges;
+.code-editor-wrap {
+    padding: 0.8rem;
 }
 
 .copy-btn {
@@ -504,48 +497,35 @@ textarea:focus {
     cursor: pointer;
 }
 
-.code-card pre,
-.code-pre {
-    margin: 0;
-    padding: 0.95rem;
-    width: fit-content;
-    min-width: 100%;
-}
-
-.code-card code {
-    display: inline-block;
-    min-width: max-content;
-    white-space: pre;
-    overflow-wrap: normal;
-    word-break: normal;
+.code-editor {
+    width: 100%;
+    min-height: 260px;
+    max-height: 70vh;
+    resize: vertical;
+    border: 1px solid #2e4c68;
+    border-radius: 10px;
+    padding: 0.85rem;
+    background: #0d1724;
     color: #d4e9ff;
     font-family: Consolas, "Courier New", monospace;
-    font-size: 0.87rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    white-space: pre;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.code-editor:focus {
+    outline: 2px solid rgba(26, 163, 168, 0.45);
+    outline-offset: 2px;
 }
 
 .mobile-scroll-hint {
-    display: none;
+    display: block;
     margin: 0.55rem 0.8rem 0.75rem;
     color: #9fc2e0;
     font-size: 0.82rem;
     font-weight: 600;
-}
-
-body.is-touch-device .mobile-scroll-hint {
-    display: block;
-}
-
-body.is-touch-device .code-card pre {
-    min-width: 980px;
-}
-
-body.is-touch-device .code-pre {
-    min-width: 980px;
-}
-
-body.is-touch-device .code-card code {
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 .checklist {
@@ -639,11 +619,10 @@ body.is-touch-device .code-card code {
         grid-template-columns: 1fr;
     }
 
-    .code-card pre,
-    .code-pre {
-        min-width: 980px;
-        font-size: 0.85rem;
-        padding: 0.82rem;
+    .code-editor {
+        min-height: 220px;
+        max-height: 62vh;
+        font-size: 0.84rem;
     }
 
     .header-top {
