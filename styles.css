@@ -504,7 +504,8 @@ textarea:focus {
     cursor: pointer;
 }
 
-.code-card pre {
+.code-card pre,
+.code-pre {
     margin: 0;
     padding: 0.95rem;
     width: fit-content;
@@ -515,6 +516,8 @@ textarea:focus {
     display: inline-block;
     min-width: max-content;
     white-space: pre;
+    overflow-wrap: normal;
+    word-break: normal;
     color: #d4e9ff;
     font-family: Consolas, "Courier New", monospace;
     font-size: 0.87rem;
@@ -533,6 +536,10 @@ body.is-touch-device .mobile-scroll-hint {
 }
 
 body.is-touch-device .code-card pre {
+    min-width: 980px;
+}
+
+body.is-touch-device .code-pre {
     min-width: 980px;
 }
 
@@ -632,7 +639,9 @@ body.is-touch-device .code-card code {
         grid-template-columns: 1fr;
     }
 
-    .code-card pre {
+    .code-card pre,
+    .code-pre {
+        min-width: 980px;
         font-size: 0.85rem;
         padding: 0.82rem;
     }
