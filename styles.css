@@ -483,6 +483,14 @@ textarea:focus {
     font-size: 0.86rem;
 }
 
+.code-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scrollbar-gutter: stable both-edges;
+}
+
 .copy-btn {
     border: 1px solid #36567a;
     background: transparent;
@@ -496,18 +504,28 @@ textarea:focus {
 .code-card pre {
     margin: 0;
     padding: 0.95rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
+    min-width: max-content;
 }
 
 .code-card code {
-    display: block;
+    display: inline-block;
     min-width: max-content;
     white-space: pre;
     color: #d4e9ff;
     font-family: Consolas, "Courier New", monospace;
     font-size: 0.87rem;
+}
+
+.mobile-scroll-hint {
+    display: none;
+    margin: 0.55rem 0.8rem 0.75rem;
+    color: #9fc2e0;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+body.is-touch-device .mobile-scroll-hint {
+    display: block;
 }
 
 .checklist {
@@ -599,6 +617,11 @@ textarea:focus {
 
     .skill-level-grid {
         grid-template-columns: 1fr;
+    }
+
+    .code-card pre {
+        font-size: 0.83rem;
+        padding: 0.82rem;
     }
 
     .header-top {

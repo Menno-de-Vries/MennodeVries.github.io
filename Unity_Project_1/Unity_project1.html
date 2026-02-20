@@ -112,7 +112,8 @@
                                 <span>Example: PlayerMovement.cs</span>
                                 <button class="copy-btn" type="button" data-copy-target="code-sample-1">Copy</button>
                             </header>
-                            <pre><code id="code-sample-1">public class PlayerMovement : MonoBehaviour
+                            <div class="code-scroll" aria-label="Horizontaal scrollbaar codeblok">
+                                <pre><code id="code-sample-1">public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 6f;
     private Rigidbody _rb;
@@ -127,6 +128,8 @@
         _rb.MovePosition(_rb.position + direction * speed * Time.fixedDeltaTime);
     }
 }</code></pre>
+                            </div>
+                            <p class="mobile-scroll-hint" id="mobile-scroll-hint">Swipe naar links/rechts voor meer code.</p>
                         </article>
                     </div>
                 </div>
@@ -166,6 +169,10 @@
     </footer>
 
     <script>
+        if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 800) {
+            document.body.classList.add("is-touch-device");
+        }
+
         const tabButtons = document.querySelectorAll("[data-tab-target]");
         const tabPanels = document.querySelectorAll("[data-tab-panel]");
 
