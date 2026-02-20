@@ -350,7 +350,7 @@ a {
     .site-nav {
         position: relative;
         flex-wrap: nowrap;
-        padding-right: 360px;
+        padding-right: 390px;
         min-height: 42px;
     }
 
@@ -400,7 +400,7 @@ a {
     .site-header:hover .site-nav > a {
         opacity: 1;
         transform: translateY(0);
-        min-width: 124px;
+        min-width: 0;
         max-width: 240px;
         padding: 0.52rem 0.9rem;
         border-width: 1px;
