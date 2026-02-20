@@ -484,10 +484,13 @@ textarea:focus {
 }
 
 .code-scroll {
-    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: scroll;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-x;
+    overscroll-behavior-x: contain;
     scrollbar-gutter: stable both-edges;
 }
 
@@ -504,7 +507,7 @@ textarea:focus {
 .code-card pre {
     margin: 0;
     padding: 0.95rem;
-    width: max-content;
+    width: fit-content;
     min-width: 100%;
 }
 
@@ -527,6 +530,10 @@ textarea:focus {
 
 body.is-touch-device .mobile-scroll-hint {
     display: block;
+}
+
+body.is-touch-device .code-card pre {
+    min-width: 980px;
 }
 
 .checklist {
@@ -621,7 +628,6 @@ body.is-touch-device .mobile-scroll-hint {
     }
 
     .code-card pre {
-        min-width: 720px;
         font-size: 0.85rem;
         padding: 0.82rem;
     }

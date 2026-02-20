@@ -169,7 +169,12 @@
     </footer>
 
     <script>
-        if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 800) {
+        const isLikelyTouchDevice =
+            window.matchMedia("(pointer: coarse)").matches ||
+            navigator.maxTouchPoints > 0 ||
+            /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        if (isLikelyTouchDevice) {
             document.body.classList.add("is-touch-device");
         }
 
@@ -211,6 +216,18 @@
                 }
             });
         });
+
+        const codeScroll = document.querySelector(".code-scroll");
+        const scrollHint = document.getElementById("mobile-scroll-hint");
+
+        const updateScrollHintVisibility = () => {
+            if (!codeScroll || !scrollHint) return;
+            const hasOverflow = codeScroll.scrollWidth > codeScroll.clientWidth + 2;
+            scrollHint.style.display = document.body.classList.contains("is-touch-device") && hasOverflow ? "block" : "none";
+        };
+
+        updateScrollHintVisibility();
+        window.addEventListener("resize", updateScrollHintVisibility);
     </script>
 </body>
 </html>
