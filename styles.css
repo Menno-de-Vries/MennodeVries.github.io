@@ -504,7 +504,8 @@ textarea:focus {
 .code-card pre {
     margin: 0;
     padding: 0.95rem;
-    min-width: max-content;
+    width: max-content;
+    min-width: 100%;
 }
 
 .code-card code {
@@ -620,7 +621,8 @@ body.is-touch-device .mobile-scroll-hint {
     }
 
     .code-card pre {
-        font-size: 0.83rem;
+        min-width: 720px;
+        font-size: 0.85rem;
         padding: 0.82rem;
     }
 
