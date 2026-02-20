@@ -496,10 +496,15 @@ textarea:focus {
 .code-card pre {
     margin: 0;
     padding: 0.95rem;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .code-card code {
+    display: block;
+    min-width: max-content;
+    white-space: pre;
     color: #d4e9ff;
     font-family: Consolas, "Courier New", monospace;
     font-size: 0.87rem;
