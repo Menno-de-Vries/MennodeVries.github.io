@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Project 1 | Menno de Vries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="header-top">
+                <a class="brand" href="../index.html">Menno de Vries</a>
+                <p class="role">Game Developer | Cybersecurity & Cloud Student</p>
+            </div>
+            <nav class="site-nav" aria-label="Hoofdnavigatie">
+                <a href="../index.html">Home</a>
+                <a class="is-active" href="../Projecten.html">Projecten</a>
+                <a href="../Cybersecurity.html">Cybersecurity</a>
+                <a href="../Blog.html">Blog</a>
+                <a href="../Contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="project-header">
+                    <div>
+                        <h1>Unity Project 1</h1>
+                        <p>Template voor een professionele project showcase met screenshots, video, codefragmenten en technische details.</p>
+                        <div class="project-badges">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>Gameplay Systems</span>
+                            <span>In Development</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-small" href="../Projecten.html">Terug naar Projecten</a>
+                </div>
+                <div class="project-meta-grid">
+                    <article class="project-meta-item">
+                        <strong>Rol</strong>
+                        <p>Solo Developer</p>
+                    </article>
+                    <article class="project-meta-item">
+                        <strong>Duur</strong>
+                        <p>8 weken (template)</p>
+                    </article>
+                    <article class="project-meta-item">
+                        <strong>Engine</strong>
+                        <p>Unity 6</p>
+                    </article>
+                    <article class="project-meta-item">
+                        <strong>Status</strong>
+                        <p>Prototype fase</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="project-layout section">
+                <div>
+                    <h2>Project Overzicht</h2>
+                    <p>Gebruik deze opzet om je project helder te presenteren: wat je hebt gebouwd, waarom je keuzes maakte en wat het resultaat is.</p>
+
+                    <div class="media-tabs" role="tablist" aria-label="Project media tabs">
+                        <button class="tab-btn is-active" type="button" data-tab-target="screenshots">Screenshots</button>
+                        <button class="tab-btn" type="button" data-tab-target="video">Video</button>
+                        <button class="tab-btn" type="button" data-tab-target="code">Code</button>
+                    </div>
+
+                    <div class="media-panel is-active" data-tab-panel="screenshots">
+                        <div class="shot-grid">
+                            <article class="shot-card">
+                                <div class="shot-placeholder">Screenshot 1<br>Gameplay Overview</div>
+                                <p>Vervang deze placeholder met een echte screenshot van je core gameplay loop.</p>
+                            </article>
+                            <article class="shot-card">
+                                <div class="shot-placeholder">Screenshot 2<br>UI / HUD</div>
+                                <p>Toon hier interface-werk zoals inventory, score of statuspanelen.</p>
+                            </article>
+                            <article class="shot-card">
+                                <div class="shot-placeholder">Screenshot 3<br>System Debug</div>
+                                <p>Voeg technische visuals toe om je systeemdesign te laten zien.</p>
+                            </article>
+                            <article class="shot-card">
+                                <div class="shot-placeholder">Screenshot 4<br>Level / Scene</div>
+                                <p>Gebruik dit vlak voor level design, belichting of environment shots.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="media-panel" data-tab-panel="video">
+                        <div class="video-frame">
+                            <iframe
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                title="Project demo video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p>Vervang de video-link met je eigen demo (YouTube of vergelijkbaar).</p>
+                    </div>
+
+                    <div class="media-panel" data-tab-panel="code">
+                        <article class="code-card">
+                            <header>
+                                <span>Example: PlayerMovement.cs</span>
+                                <button class="copy-btn" type="button" data-copy-target="code-sample-1">Copy</button>
+                            </header>
+                            <pre><code id="code-sample-1">public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField] private float speed = 6f;
+    private Rigidbody _rb;
+
+    private void Awake() => _rb = GetComponent&lt;Rigidbody&gt;();
+
+    private void FixedUpdate()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(x, 0f, z).normalized;
+        _rb.MovePosition(_rb.position + direction * speed * Time.fixedDeltaTime);
+    }
+}</code></pre>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="project-sidebar">
+                    <article class="card">
+                        <h3>Highlights</h3>
+                        <ul class="checklist">
+                            <li>Heldere probleemstelling en aanpak</li>
+                            <li>Meetbaar resultaat (FPS, bugs, features)</li>
+                            <li>Korte lessons learned per sprint</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Links</h3>
+                        <div class="project-actions">
+                            <a class="btn btn-small" href="#">GitHub Repository</a>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-small" href="#">Playable Build</a>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-small" href="#">Devlog</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Tip</h3>
+                        <p>Dupliceren voor een nieuw project: kopieer deze map en vervang alleen titels, media en links.</p>
+                    </article>
+                </aside>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Menno de Vries. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <script>
+        const tabButtons = document.querySelectorAll("[data-tab-target]");
+        const tabPanels = document.querySelectorAll("[data-tab-panel]");
+
+        tabButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const target = button.dataset.tabTarget;
+
+                tabButtons.forEach((item) => item.classList.remove("is-active"));
+                tabPanels.forEach((panel) => panel.classList.remove("is-active"));
+
+                button.classList.add("is-active");
+                const nextPanel = document.querySelector(`[data-tab-panel="${target}"]`);
+                if (nextPanel) nextPanel.classList.add("is-active");
+            });
+        });
+
+        const copyButtons = document.querySelectorAll("[data-copy-target]");
+        copyButtons.forEach((button) => {
+            button.addEventListener("click", async () => {
+                const targetId = button.dataset.copyTarget;
+                const codeNode = document.getElementById(targetId);
+                if (!codeNode) return;
+
+                try {
+                    await navigator.clipboard.writeText(codeNode.textContent || "");
+                    const previous = button.textContent;
+                    button.textContent = "Copied";
+                    setTimeout(() => {
+                        button.textContent = previous;
+                    }, 1200);
+                } catch (error) {
+                    button.textContent = "Failed";
+                    setTimeout(() => {
+                        button.textContent = "Copy";
+                    }, 1200);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
