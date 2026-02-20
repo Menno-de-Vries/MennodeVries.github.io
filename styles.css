@@ -20,6 +20,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
     background:
         radial-gradient(1100px 500px at 10% -10%, rgba(26, 163, 168, 0.16), transparent 55%),
@@ -102,6 +104,7 @@ a {
 }
 
 main {
+    flex: 1 0 auto;
     padding: 2.6rem 0 3.2rem;
 }
 
@@ -343,7 +346,7 @@ textarea:focus {
 }
 
 .footer {
-    margin-top: 1.8rem;
+    margin-top: auto;
     padding: 1.4rem 0;
     background: var(--brand-strong);
     color: #d7e7f2;
