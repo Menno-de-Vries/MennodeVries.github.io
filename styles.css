@@ -620,8 +620,8 @@ textarea:focus {
     }
 
     .code-editor {
-        min-height: 220px;
-        max-height: 62vh;
+        min-height: 320px;
+        max-height: 72vh;
         font-size: 0.84rem;
     }
 
