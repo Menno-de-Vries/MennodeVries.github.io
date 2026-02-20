@@ -13,6 +13,10 @@
     --radius: 14px;
 }
 
+html {
+    height: 100%;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,6 +26,8 @@
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
     font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
     background:
         radial-gradient(1100px 500px at 10% -10%, rgba(26, 163, 168, 0.16), transparent 55%),
@@ -29,7 +35,6 @@ body {
         var(--bg);
     color: var(--text);
     line-height: 1.65;
-    min-height: 100vh;
 }
 
 a {
