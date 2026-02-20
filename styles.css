@@ -518,6 +518,59 @@ textarea:focus {
     background: #fff;
 }
 
+.skill-level-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.skill-level-card {
+    background: linear-gradient(180deg, #fff, #f7fbff);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.9rem;
+}
+
+.skill-level-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-level-head h3 {
+    margin: 0;
+    color: var(--brand);
+    font-size: 1rem;
+}
+
+.skill-level-head span {
+    color: var(--accent-strong);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: #dfe8f0;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #1aa3a8, #0c3b5b);
+}
+
+.skill-level-card p {
+    margin-top: 0.55rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
 @media (max-width: 800px) {
     .grid.two {
         grid-template-columns: 1fr;
@@ -536,6 +589,10 @@ textarea:focus {
     }
 
     .shot-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-level-grid {
         grid-template-columns: 1fr;
     }
 
