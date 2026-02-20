@@ -130,7 +130,7 @@
 }
                                 </textarea>
                             </div>
-                            <p class="mobile-scroll-hint">Tip: op desktop kun je dit codevak in hoogte aanpassen.</p>
+                            <p class="mobile-scroll-hint">De hoogte past zich automatisch aan op basis van de code.</p>
                         </article>
                     </div>
                 </div>
@@ -181,6 +181,14 @@
 
         const tabButtons = document.querySelectorAll("[data-tab-target]");
         const tabPanels = document.querySelectorAll("[data-tab-panel]");
+        const codeEditors = document.querySelectorAll(".code-editor");
+
+        const resizeCodeEditorsToContent = () => {
+            codeEditors.forEach((editor) => {
+                editor.style.height = "auto";
+                editor.style.height = `${editor.scrollHeight}px`;
+            });
+        };
 
         tabButtons.forEach((button) => {
             button.addEventListener("click", () => {
@@ -192,6 +200,7 @@
                 button.classList.add("is-active");
                 const nextPanel = document.querySelector(`[data-tab-panel="${target}"]`);
                 if (nextPanel) nextPanel.classList.add("is-active");
+                requestAnimationFrame(resizeCodeEditorsToContent);
             });
         });
 
@@ -218,6 +227,9 @@
                 }
             });
         });
+
+        resizeCodeEditorsToContent();
+        window.addEventListener("resize", resizeCodeEditorsToContent);
 
     </script>
 </body>
