@@ -29,10 +29,11 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     font-family: "Space Grotesk", "Segoe UI", Tahoma, sans-serif;
-    background:
+    background-color: var(--bg);
+    background-image:
         radial-gradient(1100px 500px at 10% -10%, rgba(26, 163, 168, 0.16), transparent 55%),
-        radial-gradient(1000px 420px at 90% -18%, rgba(12, 59, 91, 0.18), transparent 58%),
-        var(--bg);
+        radial-gradient(1000px 420px at 90% -18%, rgba(12, 59, 91, 0.18), transparent 58%);
+    background-repeat: no-repeat, no-repeat;
     color: var(--text);
     line-height: 1.65;
 }
