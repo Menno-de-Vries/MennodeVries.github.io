@@ -25,6 +25,9 @@ body.theme-dark {
     --accent-strong: #5bd9dd;
     --border: #30475e;
     --shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    background-image:
+        radial-gradient(1100px 520px at 8% -12%, rgba(255, 194, 132, 0.12), transparent 58%),
+        radial-gradient(1000px 460px at 92% -18%, rgba(53, 188, 192, 0.15), transparent 62%);
 }
 
 body.theme-dark .site-header {
@@ -340,7 +343,7 @@ a {
     outline-offset: 2px;
 }
 
-@media (min-width: 801px) {
+@media (min-width: 801px) and (hover: hover) and (pointer: fine) {
     .site-nav {
         position: relative;
         flex-wrap: nowrap;
