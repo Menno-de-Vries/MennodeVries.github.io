@@ -787,6 +787,46 @@ textarea:focus {
     min-height: 170px;
     object-fit: cover;
     display: block;
+    transform-origin: center;
+    transition: transform 0.25s ease;
+}
+
+.shot-link {
+    display: block;
+    overflow: hidden;
+}
+
+.shot-card:hover img,
+.shot-card:focus-within img {
+    transform: scale(1.12);
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    background: rgba(4, 10, 18, 0.84);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.image-lightbox.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.image-lightbox img {
+    max-width: min(1200px, 95vw);
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(220, 235, 248, 0.35);
+    box-shadow: 0 24px 45px rgba(0, 0, 0, 0.45);
 }
 
 .shot-placeholder {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity Project 1 | Menno de Vries</title>
+    <title>Night Racer | Menno de Vries</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -42,13 +42,13 @@
             <section class="hero">
                 <div class="project-header">
                     <div>
-                        <h1>Unity Project 1</h1>
-                        <p>Template voor een professionele project showcase met screenshots, video, codefragmenten en technische details.</p>
+                        <h1>Night Racer</h1>
+                        <p>Arcade racing project waarin ik de rijervaring, raceflow en physics van de auto stap voor stap opbouw en verbeter.</p>
                         <div class="project-badges">
                             <span>Unity</span>
                             <span>C#</span>
-                            <span>Gameplay Systems</span>
-                            <span>In Development</span>
+                            <span>Racing Mechanics</span>
+                            <span>GameManager</span>
                         </div>
                     </div>
                     <a class="btn btn-small" href="../Projecten.html">Terug naar Projecten</a>
@@ -60,7 +60,7 @@
                     </article>
                     <article class="project-meta-item">
                         <strong>Duur</strong>
-                        <p>8 weken (template)</p>
+                        <p>Doorlopend project</p>
                     </article>
                     <article class="project-meta-item">
                         <strong>Engine</strong>
@@ -68,7 +68,7 @@
                     </article>
                     <article class="project-meta-item">
                         <strong>Status</strong>
-                        <p>Prototype fase</p>
+                        <p>In ontwikkeling</p>
                     </article>
                 </div>
             </section>
@@ -76,7 +76,7 @@
             <section class="project-layout section">
                 <div>
                     <h2>Project Overzicht</h2>
-                    <p>Gebruik deze opzet om je project helder te presenteren: wat je hebt gebouwd, waarom je keuzes maakte en wat het resultaat is.</p>
+                    <p>Night Racer is een raceproject waarin de focus ligt op controle en gevoel van de auto. Ik werk aan de kernsystemen die een race speelbaar en eerlijk maken: vehicle movement, zwaartekracht, lap-validatie en gameflow.</p>
 
                     <div class="media-tabs" role="tablist" aria-label="Project media tabs">
                         <button class="tab-btn is-active" type="button" data-tab-target="screenshots">Screenshots</button>
@@ -87,81 +87,182 @@
                     <div class="media-panel is-active" data-tab-panel="screenshots">
                         <div class="shot-grid">
                             <article class="shot-card">
-                                <img data-shot="01" src="media/screenshots/screenshot-01.png" alt="Screenshot 1 - Gameplay Overview">
-                                <p><strong>Bestandsnaam:</strong> <code>media/screenshots/screenshot-01.[png|jpg|jpeg|webp]</code></p>
+                                <a class="shot-link" href="media/screenshots/screenshot-01.png">
+                                    <img data-shot="01" src="media/screenshots/screenshot-01.png" alt="Screenshot 1 - Gameplay Overview">
+                                </a>
                             </article>
                             <article class="shot-card">
-                                <img data-shot="02" src="media/screenshots/screenshot-02.png" alt="Screenshot 2 - UI of HUD">
-                                <p><strong>Bestandsnaam:</strong> <code>media/screenshots/screenshot-02.[png|jpg|jpeg|webp]</code></p>
+                                <a class="shot-link" href="media/screenshots/screenshot-02.png">
+                                    <img data-shot="02" src="media/screenshots/screenshot-02.png" alt="Screenshot 2 - UI of HUD">
+                                </a>
                             </article>
                             <article class="shot-card">
-                                <img data-shot="03" src="media/screenshots/screenshot-03.png" alt="Screenshot 3 - System Debug">
-                                <p><strong>Bestandsnaam:</strong> <code>media/screenshots/screenshot-03.[png|jpg|jpeg|webp]</code></p>
+                                <a class="shot-link" href="media/screenshots/screenshot-03.png">
+                                    <img data-shot="03" src="media/screenshots/screenshot-03.png" alt="Screenshot 3 - System Debug">
+                                </a>
                             </article>
                             <article class="shot-card">
-                                <img data-shot="04" src="media/screenshots/screenshot-04.png" alt="Screenshot 4 - Level of Scene">
-                                <p><strong>Bestandsnaam:</strong> <code>media/screenshots/screenshot-04.[png|jpg|jpeg|webp]</code></p>
+                                <a class="shot-link" href="media/screenshots/screenshot-04.png">
+                                    <img data-shot="04" src="media/screenshots/screenshot-04.png" alt="Screenshot 4 - Level of Scene">
+                                </a>
                             </article>
                         </div>
-                        <p>Zet je afbeeldingen in <code>media/screenshots</code>. De extensie mag <code>.png</code>, <code>.jpg</code>, <code>.jpeg</code> of <code>.webp</code> zijn.</p>
                     </div>
 
                     <div class="media-panel" data-tab-panel="video">
                         <div class="video-frame">
                             <video controls preload="metadata" aria-label="Project demo video">
-                                <source src="project-demo.mp4" type="video/mp4">
+                                <source src="media/video/project-demo.mp4" type="video/mp4">
                                 Je browser ondersteunt geen HTML5 video.
                             </video>
                         </div>
-                        <p><strong>Bestandsnaam video:</strong> <code>project-demo.mp4</code>. Hierdoor draait video lokaal uit je eigen map, zonder YouTube.</p>
+                        <p><strong>Bestandsnaam video:</strong> <code>media/video/project-demo.mp4</code>. Hierdoor draait video lokaal uit je eigen map, zonder YouTube.</p>
                     </div>
 
                     <div class="media-panel" data-tab-panel="code">
-                        <article class="code-card">
+                        <article class="code-card" style="margin-top: 0.8rem;">
                             <header>
-                                <span>Snippet 1: PlayerMovement.cs</span>
+                                <span>Snippet 1: Player Movement + Gravity</span>
                                 <button class="copy-btn" type="button" data-copy-target="code-sample-1">Copy</button>
                             </header>
-                            <div class="code-editor-wrap" aria-label="Codevoorbeeld">
-                                <textarea class="code-editor" id="code-sample-1" readonly spellcheck="false">public class PlayerMovement : MonoBehaviour
+                            <div class="code-editor-wrap" aria-label="Derde codevoorbeeld">
+                                <textarea class="code-editor" id="code-sample-1" readonly spellcheck="false">private void MovePlayer()
 {
-    [SerializeField] private float speed = 6f;
-    private Rigidbody _rb;
+    // Stores the input into the vector3
+    Data.MovementAxis = new Vector3(0f, Data.MovementAxis.y, Input.GetAxis("Vertical"));
 
-    private void Awake() => _rb = GetComponent&lt;Rigidbody&gt;();
+    // Lets you walk in the direction you are looking in
+    Vector3 _move = transform.right * Data.MovementAxis.x + transform.forward * Data.MovementAxis.z;
 
-    private void FixedUpdate()
+    // Lets you move the player with the input and the walking speed
+    if (!Input.GetKey(KeyCode.LeftShift))
+        m_rb.AddForce(_move * Data.WalkingSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
+    else
+        m_rb.AddForce(_move * Data.WalkingSpeed * Data.RunningSpeedMultiplier * Time.fixedDeltaTime, ForceMode.VelocityChange);
+}
+
+#endregion
+
+/// &lt;summary&gt;
+/// This takes the player after jumping back to the ground as gravity should work
+/// &lt;/summary&gt;
+private void Grav()
+{
+    if (!Data.Grounded)
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(x, 0f, z).normalized;
-        _rb.MovePosition(_rb.position + direction * speed * Time.fixedDeltaTime);
+        // Calculates the gravity that works on the player
+        Vector3 _gravity = Data.Gravity * Data.GravityScale * m_rb.mass * Vector3.up;
+
+        // Adds the gravity on to the player
+        m_rb.AddForce(_gravity, ForceMode.Acceleration);
     }
 }
                                 </textarea>
                             </div>
-                            <p class="mobile-scroll-hint">De hoogte past zich automatisch aan op basis van de code.</p>
                         </article>
                         <article class="code-card" style="margin-top: 0.8rem;">
                             <header>
-                                <span>Snippet 2: InventorySystem.cs</span>
+                                <span>Snippet 2: Game Manager Timer + Laps</span>
                                 <button class="copy-btn" type="button" data-copy-target="code-sample-2">Copy</button>
                             </header>
-                            <div class="code-editor-wrap" aria-label="Tweede codevoorbeeld">
-                                <textarea class="code-editor" id="code-sample-2" readonly spellcheck="false">public class InventorySystem : MonoBehaviour
+                            <div class="code-editor-wrap" aria-label="Vierde codevoorbeeld">
+                                <textarea class="code-editor" id="code-sample-2" readonly spellcheck="false">public void Start()
 {
-    private readonly List&lt;string&gt; _items = new List&lt;string&gt;();
+    maxAmountOflaps = 3;
 
-    public void AddItem(string itemId)
+    currentTime = 0;
+}
+
+public void Update()
+{
+    laps.text = ("Laps " + TheAmountOfLaps + ":" + maxAmountOflaps);
+
+    if (TheAmountOfLaps >= lapsToWin)
     {
-        if (string.IsNullOrWhiteSpace(itemId)) return;
-        _items.Add(itemId);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    if (stopwatchActive == true)
+    {
+        currentTime = currentTime + Time.deltaTime;
+    }
+    TimeSpan time = TimeSpan.FromSeconds(currentTime);
+    Timer.text = time.ToString(@"mm\:ss\:fff");
+}
+
+public void StartStopWatch()
+{
+    stopwatchActive = true;
+}
+
+public void StopStopWatch()
+{
+    stopwatchActive = false;
+    currentTime = 0;
+}
+
+#endregion
+
+#region Safe point and finish system
+
+/// &lt;summary&gt;
+/// Checks if you are riding the route correctly so you can race all laps
+/// &lt;/summary&gt;
+/// &lt;param name="_WaypointOrFinish"&gt;&lt;/param&gt;
+public void CheckAndSafeWaypointLap(GameObject _WaypointOrFinish)
+{
+    if (_WaypointOrFinish.GetComponent&lt;FinishTag&gt;())
+    {
+        CheckForFinish();
+        return;
+    }
+
+    else if (_WaypointOrFinish.GetComponent&lt;WaypointTag&gt;())
+    {
+        // Grabs the script of the waypoint and then checks if it is the right one
+        // if not then your not following the race track in the good direction
+        WaypointTag _WaypointScript = _WaypointOrFinish.GetComponent&lt;WaypointTag&gt;();
+
+        if (_WaypointScript.WaypointIndentifier == WaypointAmount)
+        {
+            // Fills the right index in the array with the right Waypoint
+            Waypoints[WaypointAmount] = _WaypointOrFinish;
+
+            // Sets the Waypoint amount to the next waypoint it needs
+            WaypointAmount++;
+        }
+        else
+            Debug.Log("Your going the wrong way");
+    }
+}
+
+/// &lt;summary&gt;
+/// if you have raced the track correctly then if you finish it then it will lower the amount of laps remaining and start the waypoint saving system over again
+/// &lt;/summary&gt;
+public void CheckForFinish()
+{
+    if (Waypoints[Waypoints.Length - 1] != null)
+    {
+        // Clears the waypoint array to race the new lap
+        for (int i = 0; i &lt; Waypoints.Length; i++)
+        {
+            Waypoints[i] = null;
+            StopStopWatch();
+            StartStopWatch();
+        }
+
+        // Sets the amount of laps remaining
+        TheAmountOfLaps++;
+
+        // Sets the waypoint to the first one you need to collect
+        WaypointAmount = 0;
     }
 }
                                 </textarea>
                             </div>
                         </article>
-                        <p style="margin-top: 0.8rem;">Beste manier om code toe te voegen: gebruik per script een aparte <code>code-card</code> met unieke <code>id</code> (bijv. <code>code-sample-3</code>) en koppel de copy-knop via <code>data-copy-target</code>. Zo kun je onbeperkt snippets toevoegen.</p>
+                        <p style="margin-top: 0.8rem;">Code uit dit project: movement/physics en race manager logica. Voeg extra snippets toe door een <code>code-card</code> te dupliceren met een unieke <code>code-sample-X</code> id.</p>
                     </div>
                 </div>
 
@@ -169,15 +270,15 @@
                     <article class="card">
                         <h3>Highlights</h3>
                         <ul class="checklist">
-                            <li>Heldere probleemstelling en aanpak</li>
-                            <li>Meetbaar resultaat (FPS, bugs, features)</li>
-                            <li>Korte lessons learned per sprint</li>
+                            <li>Uitwerking van de auto-mechanics en rijgedrag.</li>
+                            <li>Opbouw van het GameManager-systeem voor gameflow en state-beheer.</li>
+                            <li>Implementatie en tuning van zwaartekracht in de gameplay.</li>
                         </ul>
                     </article>
                     <article class="card">
                         <h3>Links</h3>
                         <div class="project-actions">
-                            <a class="btn btn-small" href="#">GitHub Repository</a>
+                            <a class="btn btn-small" href="https://github.com/Menno-de-Vries/Speed-Racer.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
                         </div>
                         <div class="project-actions">
                             <a class="btn btn-small" href="#">Playable Build</a>
@@ -185,15 +286,6 @@
                         <div class="project-actions">
                             <a class="btn btn-small" href="#">Devlog</a>
                         </div>
-                    </article>
-                    <article class="card">
-                        <h3>Tip</h3>
-                        <p>Bestandsnamen voor deze projectmap:</p>
-                        <ul class="checklist">
-                            <li><code>media/screenshots/screenshot-01</code> t/m <code>screenshot-04</code> met extensie <code>.png/.jpg/.jpeg/.webp</code></li>
-                            <li><code>project-demo.mp4</code> (huidige video-pad)</li>
-                            <li>Extra code: kopieer een <code>code-card</code> en geef een nieuw <code>code-sample-X</code> id.</li>
-                        </ul>
                     </article>
                 </aside>
             </section>
@@ -203,6 +295,9 @@
     <footer class="footer">
         <p>&copy; 2026 Menno de Vries. Alle rechten voorbehouden.</p>
     </footer>
+    <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
+        <img id="image-lightbox-img" src="" alt="Vergrote screenshot">
+    </div>
 
     <script>
         const isLikelyTouchDevice =
@@ -241,6 +336,9 @@
         });
 
         const copyButtons = document.querySelectorAll("[data-copy-target]");
+        const shotLinks = document.querySelectorAll(".shot-link");
+        const lightbox = document.getElementById("image-lightbox");
+        const lightboxImage = document.getElementById("image-lightbox-img");
         copyButtons.forEach((button) => {
             button.addEventListener("click", async () => {
                 const targetId = button.dataset.copyTarget;
@@ -281,6 +379,8 @@
                         probe.src = candidate;
                     });
                     img.src = candidate;
+                    const link = img.closest(".shot-link");
+                    if (link) link.href = candidate;
                     return;
                 } catch (_error) {
                     // Try next extension.
@@ -292,6 +392,35 @@
             resolveScreenshotPath(img);
         });
 
+        const closeLightbox = () => {
+            if (!lightbox || !lightboxImage) return;
+            lightbox.classList.remove("is-open");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxImage.src = "";
+        };
+
+        shotLinks.forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                if (!lightbox || !lightboxImage) return;
+                const targetSrc = link.getAttribute("href");
+                if (!targetSrc) return;
+                lightboxImage.src = targetSrc;
+                lightbox.classList.add("is-open");
+                lightbox.setAttribute("aria-hidden", "false");
+            });
+        });
+
+        if (lightbox) {
+            lightbox.addEventListener("click", (event) => {
+                if (event.target === lightbox) closeLightbox();
+            });
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeLightbox();
+        });
+
         resizeCodeEditorsToContent();
         window.addEventListener("resize", resizeCodeEditorsToContent);
 
@@ -301,9 +430,3 @@
     <script src="../theme-toggle.js" defer></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script></body>
 </html>
-
-
-
-
-
-
