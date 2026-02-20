@@ -241,6 +241,19 @@ main {
     box-shadow: 0 10px 22px rgba(8, 43, 66, 0.25);
 }
 
+.blog-card-link {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.blog-card-link:hover,
+.blog-card-link:focus-visible {
+    transform: scale(1.02);
+    border-color: rgba(26, 163, 168, 0.62);
+    box-shadow: 0 16px 30px rgba(8, 43, 66, 0.18);
+}
+
 .game-card {
     transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     transform-origin: center;
