@@ -18,99 +18,96 @@
             </div>
             <nav class="site-nav" aria-label="Hoofdnavigatie">
                 <a class="is-active" href="index.html">Home</a>
+                <a href="About_Me/AboutMe.html">About Me</a>
                 <a href="Projecten.html">Projecten</a>
+                <a href="Keuzehulp.html">PC Keuzehulp</a>
                 <a href="Cybersecurity.html">Cybersecurity</a>
                 <a href="Blog.html">Blog</a>
                 <a href="Contact.html">Contact</a>
-            </nav>
+                            <div class="lang-switcher">
+                    <label for="lang-select">Taal</label>
+                    <select id="lang-select" class="js-language-select" aria-label="Selecteer taal">
+                        <option value="nl">Nederlands</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>            </nav>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <section class="hero">
-                <h1>Portfolio van Menno de Vries</h1>
-                <p>Ik bouw graag aan technische oplossingen op het snijvlak van software, beveiliging en cloud. Op deze website vind je mijn projecten, leerdoelen en praktijkervaring.</p>
+            <section class="hero welcome-hero">
+                <div class="welcome-grid">
+                    <div>
+                        <p class="meta">Welkom</p>
+                        <h1>Welkom op mijn ICT Portfolio</h1>
+                        <p>Op deze website krijg je een helder beeld van mijn ontwikkeling in game development, cybersecurity en cloud. Je vindt hier projecten, technische keuzes, leerdoelen en concrete voortgang.</p>
+                        <div class="welcome-actions">
+                            <a class="btn" href="About_Me/AboutMe.html">Start bij About Me</a>
+                            <a class="btn btn-ghost" href="Projecten.html">Bekijk Projecten</a>
+                        </div>
+                    </div>
+                    <figure class="welcome-media">
+                        <img
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
+                            alt="Professionele ICT werkplek met code op schermen">
+                    </figure>
+                </div>
             </section>
 
             <section class="section">
-                <h2>Over mij</h2>
-                <p>Ik heb een achtergrond in game development en volg momenteel een specialisatie in Cybersecurity & Cloud aan de Hogeschool Utrecht. Die combinatie helpt mij om zowel creatief als security-first te ontwerpen.</p>
-            </section>
-
-            <section class="section">
-                <h2>Vaardigheden</h2>
-                <div class="skill-level-grid">
-                    <article class="skill-level-card">
-                        <div class="skill-level-head">
-                            <h3>Unity</h3>
-                            <span>Gevorderd</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-                        <p>Primaire engine uit mijn MBO4 Game Development opleiding en eigen praktijkprojecten.</p>
+                <h2>Wat je hier kunt verwachten</h2>
+                <div class="grid two">
+                    <article class="card">
+                        <h3>Projecten met context</h3>
+                        <p>Geen losse screenshots, maar uitleg over doel, aanpak, techniek en resultaat per project.</p>
                     </article>
-                    <article class="skill-level-card">
-                        <div class="skill-level-head">
-                            <h3>C#</h3>
-                            <span>Gevorderd</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 82%;"></div></div>
-                        <p>Gebruikt voor gameplay-systemen, scripting en projectstructuur binnen Unity-projecten.</p>
+                    <article class="card">
+                        <h3>Transparante groei</h3>
+                        <p>Je ziet waar ik nu sterk in ben en welke skills ik actief aan het verdiepen ben.</p>
                     </article>
-                    <article class="skill-level-card">
-                        <div class="skill-level-head">
-                            <h3>Windows/Linux & Netwerken</h3>
-                            <span>Basis tot gemiddeld</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 62%;"></div></div>
-                        <p>Ervaring met servers, clients, VLAN's, IPv4 en basis IPv6 in lab- en VM-omgevingen.</p>
+                    <article class="card">
+                        <h3>Cybersecurity en cloud</h3>
+                        <p>Praktische leerervaringen in netwerken, infrastructuur en automation binnen labs en VM-omgevingen.</p>
                     </article>
-                    <article class="skill-level-card">
-                        <div class="skill-level-head">
-                            <h3>PowerShell/Python Automation</h3>
-                            <span>In ontwikkeling</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 48%;"></div></div>
-                        <p>Actief bezig met semester 3 opdrachten om processen te automatiseren met scripts en playbooks.</p>
-                    </article>
-                    <article class="skill-level-card">
-                        <div class="skill-level-head">
-                            <h3>HTML</h3>
-                            <span>Basis</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 35%;"></div></div>
-                        <p>Basiskennis voor portfolio-opbouw; ik gebruik regelmatig AI-ondersteuning voor snellere iteraties.</p>
-                    </article>
-                    <article class="skill-level-card">
-                        <div class="skill-level-head">
-                            <h3>CSS</h3>
-                            <span>Beginner</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 20%;"></div></div>
-                        <p>Momenteel vooral aan het leren; styling en finetuning doe ik vaak met begeleiding en voorbeelden.</p>
+                    <article class="card">
+                        <h3>Game development roots</h3>
+                        <p>Unity en C# blijven een belangrijke basis in mijn manier van bouwen en structureren.</p>
                     </article>
                 </div>
             </section>
 
             <section class="section">
-                <h2>Focus in 2026</h2>
-                <div class="grid two">
-                    <article class="card">
-                        <h3>Unity en C# verdiepen</h3>
-                        <p>Gameplay architectuur, codekwaliteit en projectstructuur verbeteren zodat ik grotere en stabielere gameprojecten kan bouwen.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Automation in infrastructuur</h3>
-                        <p>PowerShell en Python sterker maken door netwerken en VM-omgevingen consistenter te beheren via scripts en playbooks.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Advanced netwerken</h3>
-                        <p>Verder oefenen met redundantie, VLAN-segmentatie, Hot Standby en BPDU Guard in grotere netwerkopstellingen.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Professionele portfolio-opbouw</h3>
-                        <p>Projecten duidelijk presenteren met screenshots, video's, codevoorbeelden en concrete leerresultaten per project.</p>
-                    </article>
+                <h2>Leuke weetjes</h2>
+                <article class="card fact-card">
+                    <p class="meta">Wist je dat</p>
+                    <p id="fact-text" class="fact-text">ik mijn portfolio stap voor stap uitbreid op basis van echte studieprojecten?</p>
+                    <div class="welcome-actions">
+                        <button class="btn btn-small" type="button" id="next-fact-btn">Volgende weetje</button>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section">
+                <h2>Snel navigeren</h2>
+                <div class="quick-links">
+                    <a class="card quick-link" href="About_Me/AboutMe.html">
+                        <h3>About Me</h3>
+                        <p>Achtergrond, studie, kennis, vaardigheden en hobby's.</p>
+                    </a>
+                    <a class="card quick-link" href="Projecten.html">
+                        <h3>Projecten</h3>
+                        <p>Overzicht van technische projecten en aanpak.</p>
+                    </a>
+                    <a class="card quick-link" href="Cybersecurity.html">
+                        <h3>Cybersecurity</h3>
+                        <p>Focus op netwerkbeveiliging, cloud en automation.</p>
+                    </a>
+                    <a class="card quick-link" href="Blog.html">
+                        <h3>Blog</h3>
+                        <p>Updates, lessons learned en voortgang.</p>
+                    </a>
                 </div>
             </section>
         </div>
@@ -119,5 +116,36 @@
     <footer class="footer">
         <p>&copy; 2026 Menno de Vries. Alle rechten voorbehouden.</p>
     </footer>
-</body>
+
+    <script>
+        const facts = [
+            "ik mijn portfolio stap voor stap uitbreid op basis van echte studieprojecten?",
+            "ik Unity-ervaring combineer met een cybersecurity en cloud specialisatie?",
+            "ik regelmatig werk met VM-omgevingen om netwerken veilig te testen?",
+            "deze website bewust is opgezet als groeiend technisch logboek?"
+        ];
+
+        const factText = document.getElementById("fact-text");
+        const nextFactButton = document.getElementById("next-fact-btn");
+        let factIndex = 0;
+
+        if (nextFactButton && factText) {
+            nextFactButton.addEventListener("click", () => {
+                factIndex = (factIndex + 1) % facts.length;
+                factText.classList.remove("is-visible");
+                requestAnimationFrame(() => {
+                    factText.textContent = facts[factIndex];
+                    factText.classList.add("is-visible");
+                });
+            });
+            factText.classList.add("is-visible");
+        }
+    </script>
+    <div id="google_translate_element" class="google-translate-hidden" aria-hidden="true"></div>
+    <script src="language-switcher.js" defer></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script></body>
 </html>
+
+
+
+

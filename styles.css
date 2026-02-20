@@ -84,6 +84,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 0.55rem;
+    align-items: center;
 }
 
 .site-nav a {
@@ -107,6 +108,39 @@ a {
     color: var(--brand-strong);
     border-color: #e4ffff;
     font-weight: 700;
+}
+
+.lang-switcher {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #e4ffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.lang-switcher select {
+    border-radius: 999px;
+    border: 1px solid rgba(188, 241, 239, 0.42);
+    background: rgba(8, 43, 66, 0.28);
+    color: #e4ffff;
+    padding: 0.35rem 0.65rem;
+    font: inherit;
+}
+
+.lang-switcher select:focus {
+    outline: 2px solid rgba(188, 241, 239, 0.35);
+    outline-offset: 2px;
+}
+
+.google-translate-hidden {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 main {
@@ -349,6 +383,17 @@ textarea:focus {
 .btn:focus-visible {
     background: var(--accent-strong);
     transform: translateY(-1px);
+}
+
+.btn.btn-ghost {
+    background: transparent;
+    color: var(--brand);
+    border: 1px solid var(--border);
+}
+
+.btn.btn-ghost:hover,
+.btn.btn-ghost:focus-visible {
+    background: #eef7fb;
 }
 
 .footer {
@@ -630,6 +675,258 @@ textarea:focus {
     color: var(--muted);
 }
 
+.about-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.about-photo-card {
+    background: linear-gradient(180deg, #ffffff, #f7fbff);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.8rem;
+}
+
+.about-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #eef4fa;
+}
+
+.about-photo-card figcaption {
+    margin-top: 0.55rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.about-list {
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+}
+
+.about-list li {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.6rem 0.7rem;
+}
+
+.welcome-hero {
+    overflow: hidden;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.welcome-actions {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.welcome-media {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 14px 28px rgba(8, 43, 66, 0.14);
+    animation: mediaEnter 700ms ease both;
+}
+
+.welcome-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    min-height: 320px;
+    transition: transform 0.35s ease;
+}
+
+.welcome-media:hover img {
+    transform: scale(1.03);
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.quick-link {
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.quick-link:hover,
+.quick-link:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(26, 163, 168, 0.62);
+    box-shadow: 0 18px 30px rgba(8, 43, 66, 0.16);
+}
+
+.fact-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.fact-card::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), transparent 75%);
+}
+
+.fact-text {
+    min-height: 3.2rem;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.fact-text.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.advisor-hero-media {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 14px 28px rgba(8, 43, 66, 0.14);
+}
+
+.advisor-hero-media img {
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.advisor-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.4rem;
+    align-items: start;
+}
+
+.advisor-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.advisor-input-card {
+    padding: 1.1rem;
+}
+
+.advisor-helper {
+    margin-bottom: 1rem;
+    color: var(--muted);
+}
+
+.advisor-fieldset {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    background: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.advisor-fieldset legend {
+    padding: 0 0.35rem;
+    font-weight: 700;
+    color: var(--brand-strong);
+}
+
+.advisor-option-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.advisor-actions {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.advisor-copy-status {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.advisor-option {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    background: var(--surface-soft);
+    color: var(--brand);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.advisor-result h3 {
+    margin-bottom: 0.8rem;
+}
+
+.advisor-result-list {
+    list-style: none;
+    display: grid;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+}
+
+.advisor-result-list li {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.65rem 0.75rem;
+    background: #fff;
+}
+
+.advisor-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.advisor-photo-card {
+    overflow: hidden;
+}
+
+.advisor-photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.advisor-disclaimer {
+    border-left: 4px solid var(--accent);
+}
+
+@keyframes mediaEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 800px) {
     .grid.two {
         grid-template-columns: 1fr;
@@ -652,6 +949,30 @@ textarea:focus {
     }
 
     .skill-level-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-media img {
+        min-height: 240px;
+    }
+
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+
+    .advisor-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .advisor-photo-grid {
         grid-template-columns: 1fr;
     }
 

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Keuzehulp | Menno de Vries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="header-top">
+                <a class="brand" href="index.html">Menno de Vries</a>
+                <p class="role">Game Developer | Cybersecurity & Cloud Student</p>
+            </div>
+            <nav class="site-nav" aria-label="Hoofdnavigatie">
+                <a href="index.html">Home</a>
+                <a href="About_Me/AboutMe.html">About Me</a>
+                <a href="Projecten.html">Projecten</a>
+                <a class="is-active" href="Keuzehulp.html">PC Keuzehulp</a>
+                <a href="Cybersecurity.html">Cybersecurity</a>
+                <a href="Blog.html">Blog</a>
+                <a href="Contact.html">Contact</a>
+                <div class="lang-switcher">
+                    <label for="lang-select">Taal</label>
+                    <select id="lang-select" class="js-language-select" aria-label="Selecteer taal">
+                        <option value="nl">Nederlands</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero welcome-hero">
+                <div class="welcome-grid">
+                    <div>
+                        <p class="meta">Keuzehulp</p>
+                        <h1>Desktop of laptop kiezen</h1>
+                        <p>Deze pagina helpt je om een eerste richting te bepalen voor een desktop of laptop, op basis van budget, draagbaarheid, prestaties en gebruiksscenario.</p>
+                    </div>
+                    <figure class="advisor-hero-media">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1600&q=80" alt="Moderne laptop en desktop setup op bureau">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="section advisor-layout">
+                <article class="card advisor-input-card">
+                    <h2>Vul je voorkeuren in</h2>
+                    <p class="advisor-helper">Geen zorgen als je niet alles technisch weet. Kies vooral wat het beste bij jouw gebruik past.</p>
+                    <form id="advisor-form" class="advisor-form">
+                        <div class="form-group">
+                            <label for="budget">Budget (EUR)</label>
+                            <input type="number" id="budget" name="budget" min="300" max="5000" step="50" value="1000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="portability">Moet hij makkelijk mee kunnen?</label>
+                            <select id="portability" name="portability">
+                                <option value="high">Ja, heel belangrijk</option>
+                                <option value="medium">Af en toe</option>
+                                <option value="low">Nee, vooral op 1 plek</option>
+                            </select>
+                        </div>
+
+                        <fieldset class="advisor-fieldset">
+                            <legend>Waar ga je het meest voor gebruiken?</legend>
+                            <div class="form-group">
+                                <label for="usage">Hoofdgebruik</label>
+                                <select id="usage" name="usage">
+                                    <option value="school">School / Office</option>
+                                    <option value="gaming">Gaming</option>
+                                    <option value="mixed">Mix: school + gaming</option>
+                                    <option value="creative">Creative (edit/video/3D)</option>
+                                </select>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <label for="storage">Gewenste opslag</label>
+                            <select id="storage" name="storage">
+                                <option value="512">Minimaal 512 GB SSD</option>
+                                <option value="1024">Minimaal 1 TB SSD</option>
+                                <option value="2048">Minimaal 2 TB (SSD of combinatie)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="battery">Hoe belangrijk is batterijduur?</label>
+                            <select id="battery" name="battery">
+                                <option value="high">Erg belangrijk (lang zonder oplader)</option>
+                                <option value="medium">Gemiddeld belangrijk</option>
+                                <option value="low">Niet belangrijk</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ram">Gewenst RAM</label>
+                            <select id="ram" name="ram">
+                                <option value="16">16 GB</option>
+                                <option value="32">32 GB</option>
+                                <option value="64">64 GB</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="power">Gewenste kracht (CPU/GPU)</label>
+                            <select id="power" name="power">
+                                <option value="balanced">Gebalanceerd</option>
+                                <option value="high">Hoog</option>
+                                <option value="extreme">Zeer hoog</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="futureproof">Hoelang moet het systeem goed meegaan?</label>
+                            <select id="futureproof" name="futureproof">
+                                <option value="3">Ongeveer 2-3 jaar</option>
+                                <option value="5">Ongeveer 4-5 jaar</option>
+                                <option value="6">6 jaar of langer</option>
+                            </select>
+                        </div>
+
+                        <button class="btn" type="submit">Toon advies</button>
+                    </form>
+                </article>
+
+                <article class="card advisor-result" aria-live="polite">
+                    <h2>Indicatief advies</h2>
+                    <h3 id="advice-type">Kies je voorkeuren en klik op "Toon advies".</h3>
+                    <ul id="advice-list" class="advisor-result-list">
+                        <li>Hier zie je in duidelijke taal welk type systeem het beste past.</li>
+                    </ul>
+                    <div class="advisor-option-row" id="advice-tags"></div>
+                    <div class="advisor-actions">
+                        <button class="btn btn-small" type="button" id="copy-search-btn" disabled>Kopieer zoekopdracht</button>
+                        <p id="copy-search-status" class="advisor-copy-status" aria-live="polite"></p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section">
+                <h2>Inspiratie</h2>
+                <div class="advisor-photo-grid">
+                    <article class="card advisor-photo-card">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="Laptop op bureau met code editor open">
+                        <p>Mobiele setup voor studie, development en dagelijks gebruik.</p>
+                    </article>
+                    <article class="card advisor-photo-card">
+                        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1400&q=80" alt="Krachtige desktop setup met meerdere monitoren">
+                        <p>Desktop setup voor hogere prestaties, gaming en zware workloads.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section advisor-disclaimer">
+                <h2>Disclaimer</h2>
+                <p>Deze keuzehulp is bedoeld als ondersteuning bij het maken van een keuze en geeft een indicatief advies. Het advies is niet definitief en vervangt geen persoonlijk of technisch aankoopadvies.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Menno de Vries. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <div id="google_translate_element" class="google-translate-hidden" aria-hidden="true"></div>
+    <script src="language-switcher.js" defer></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script>
+        const form = document.getElementById("advisor-form");
+        const adviceType = document.getElementById("advice-type");
+        const adviceList = document.getElementById("advice-list");
+        const adviceTags = document.getElementById("advice-tags");
+        const copySearchButton = document.getElementById("copy-search-btn");
+        const copySearchStatus = document.getElementById("copy-search-status");
+        let latestSearchQuery = "";
+
+        const getDeviceType = (portability, usage, power, budget) => {
+            if (portability === "high") return "Laptop";
+            if (portability === "medium" && usage !== "gaming") return "Laptop";
+            if (usage === "gaming" && power !== "balanced" && budget >= 1100) return "Desktop";
+            return "Desktop";
+        };
+
+        const getGpuAdvice = (usage, power, budget) => {
+            if (usage === "school") return "Voor schoolwerk is een lichte grafische chip meestal genoeg.";
+            if (usage === "creative" || usage === "mixed") {
+                return budget >= 1400 || power !== "balanced"
+                    ? "Voor dit gebruik past een middenklasse videokaart goed."
+                    : "Een instap tot middenklasse videokaart is meestal prima.";
+            }
+            if (usage === "gaming") {
+                if (power === "extreme" || budget >= 1800) return "Voor zware games op hoge settings: kies een krachtige videokaart.";
+                if (power === "high" || budget >= 1300) return "Voor soepel gamen op 1080p/1440p: middenklasse videokaart aanbevolen.";
+                return "Voor basis gaming is een instap videokaart voldoende.";
+            }
+            return "Kies de videokaart op basis van je software en gewenste beeldkwaliteit.";
+        };
+
+        const getCpuAdvice = (usage, power, futureproof) => {
+            if (usage === "school" && power === "balanced") return "Een moderne 6-core processor is meestal ruim voldoende.";
+            if (usage === "gaming") return power === "extreme" ? "Kies een snelle 8-core processor of beter." : "Een goede 6- tot 8-core processor past hier goed.";
+            if (usage === "creative") return "Voor creatieve software is 8-core of beter verstandig.";
+            if (futureproof >= 6) return "Voor langere levensduur is een 8-core processor slim.";
+            return "Kies minimaal een moderne 6-core processor.";
+        };
+
+        const toStorageText = (storage) => `${storage >= 1024 ? storage / 1024 + " TB" : storage + " GB"} SSD`;
+        const batteryAdviceMap = {
+            high: "Let extra op batterijduur en energiezuinige onderdelen.",
+            medium: "Gemiddelde batterijduur is prima voor dagelijks gebruik.",
+            low: "Batterijduur is minder belangrijk, prestaties mogen voorop staan."
+        };
+        const futureproofMap = {
+            3: "Je kunt focussen op goede prijs/kwaliteit voor nu.",
+            5: "Kies iets ruimer in RAM en opslag voor langere bruikbaarheid.",
+            6: "Kies toekomstbestendige onderdelen zodat upgraden minder snel nodig is."
+        };
+        const getExampleProducts = (deviceType, usage, budget) => {
+            if (deviceType === "Laptop") {
+                if (usage === "school") {
+                    return budget < 900
+                        ? ["Acer Aspire 5", "Lenovo IdeaPad Slim 3", "HP 15"]
+                        : ["Lenovo IdeaPad 5", "ASUS Vivobook 15", "Dell Inspiron 14"];
+                }
+                if (usage === "gaming") {
+                    return budget < 1300
+                        ? ["Acer Nitro V 15", "ASUS TUF Gaming A15", "HP Victus 15"]
+                        : ["Lenovo Legion 5", "ASUS ROG Strix G16", "MSI Katana 15"];
+                }
+                if (usage === "creative") {
+                    return budget < 1500
+                        ? ["ASUS Vivobook Pro 15", "Acer Swift X", "Lenovo Yoga Pro 7"]
+                        : ["Dell XPS 15", "ASUS ProArt Studiobook", "HP Envy 16"];
+                }
+                return budget < 1200
+                    ? ["Lenovo IdeaPad 5", "HP Pavilion 15", "ASUS Vivobook 16"]
+                    : ["Lenovo Legion Slim 5", "ASUS TUF A15", "Dell G15"];
+            }
+
+            if (usage === "school") {
+                return budget < 1000
+                    ? ["Lenovo IdeaCentre 5", "HP Pavilion Desktop", "Acer Aspire TC"]
+                    : ["Dell XPS Desktop", "Lenovo ThinkCentre Neo", "HP Envy Desktop"];
+            }
+            if (usage === "gaming") {
+                return budget < 1300
+                    ? ["Acer Nitro 50", "HP Victus 15L", "Lenovo LOQ Tower"]
+                    : ["Lenovo Legion Tower 5", "HP Omen 25L", "MSI MAG Infinite"];
+            }
+            if (usage === "creative") {
+                return budget < 1500
+                    ? ["Lenovo IdeaCentre 5i", "HP Envy Desktop", "Dell Inspiron Desktop"]
+                    : ["Dell XPS Desktop", "Lenovo Legion Tower 7", "MSI Creator P100"];
+            }
+            return budget < 1200
+                ? ["Lenovo IdeaCentre Gaming 5", "Acer Nitro 50", "HP Pavilion Desktop"]
+                : ["Lenovo Legion Tower 5", "HP Omen 25L", "Dell XPS Desktop"];
+        };
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const budget = Number(document.getElementById("budget").value || 1000);
+            const portability = document.getElementById("portability").value;
+            const usage = document.getElementById("usage").value;
+            const storage = Number(document.getElementById("storage").value);
+            const battery = document.getElementById("battery").value;
+            const ram = Number(document.getElementById("ram").value);
+            const power = document.getElementById("power").value;
+            const futureproof = Number(document.getElementById("futureproof").value);
+
+            const deviceType = getDeviceType(portability, usage, power, budget);
+            const cpuAdvice = getCpuAdvice(usage, power, futureproof);
+            const gpuAdvice = getGpuAdvice(usage, power, budget);
+            const storageAdvice = `Opslagadvies: ${toStorageText(storage)} als startpunt.`;
+            const ramAdvice = `Werkgeheugen (RAM): begin bij ${ram} GB.`;
+            const batteryAdvice = batteryAdviceMap[battery];
+            const futureproofAdvice = futureproofMap[String(futureproof)];
+            const exampleProducts = getExampleProducts(deviceType, usage, budget);
+            const exampleText = exampleProducts.join(", ");
+            const budgetAdvice = budget < 900
+                ? "Met dit budget: focus op betrouwbaarheid en later kunnen upgraden."
+                : budget < 1500
+                    ? "Met dit budget: een sterke middenklasse keuze is haalbaar."
+                    : "Met dit budget: je kunt een krachtige en duurzame setup kiezen.";
+
+            adviceType.textContent = `Advies richting: ${deviceType}`;
+            adviceList.innerHTML = `
+                <li><strong>Type:</strong> ${deviceType} past het beste bij jouw voorkeuren.</li>
+                <li><strong>Processor:</strong> ${cpuAdvice}</li>
+                <li><strong>Videokaart:</strong> ${gpuAdvice}</li>
+                <li><strong>Geheugen:</strong> ${ramAdvice}</li>
+                <li><strong>Opslag:</strong> ${storageAdvice}</li>
+                <li><strong>Batterij:</strong> ${batteryAdvice}</li>
+                <li><strong>Levensduur:</strong> ${futureproofAdvice}</li>
+                <li><strong>Budget:</strong> ${budgetAdvice}</li>
+                <li><strong>Voorbeeldmodellen om op te zoeken:</strong> ${exampleText}</li>
+                <li><strong>Zoek-tip:</strong> zoek op modelnaam + gewenste RAM/opslag (bijv. "16GB RAM" en "1TB SSD").</li>
+            `;
+
+            const useLabelMap = {
+                school: "School / Office",
+                gaming: "Gaming",
+                mixed: "Mix gebruik",
+                creative: "Creative"
+            };
+            const powerLabelMap = {
+                balanced: "Gebalanceerde kracht",
+                high: "Hoge kracht",
+                extreme: "Zeer hoge kracht"
+            };
+            const portabilityLabelMap = {
+                high: "Hoge mobiliteit",
+                medium: "Gemiddelde mobiliteit",
+                low: "Lage mobiliteit"
+            };
+            const batteryLabelMap = {
+                high: "Batterij belangrijk",
+                medium: "Batterij gemiddeld",
+                low: "Batterij minder belangrijk"
+            };
+
+            adviceTags.innerHTML = `
+                <span class="advisor-option">${useLabelMap[usage]}</span>
+                <span class="advisor-option">${powerLabelMap[power]}</span>
+                <span class="advisor-option">${portabilityLabelMap[portability]}</span>
+                <span class="advisor-option">${batteryLabelMap[battery]}</span>
+                <span class="advisor-option">Levensduur: ${futureproof}+ jaar</span>
+                <span class="advisor-option">Budget: EUR ${budget}</span>
+            `;
+
+            const firstExample = exampleProducts[0] || "";
+            latestSearchQuery = `${firstExample} ${ram}GB RAM ${toStorageText(storage)} ${deviceType} ${useLabelMap[usage]}`;
+            copySearchButton.disabled = false;
+            copySearchStatus.textContent = `Voorbeeld zoekopdracht klaar: ${latestSearchQuery}`;
+        });
+
+        copySearchButton.addEventListener("click", async () => {
+            if (!latestSearchQuery) return;
+            try {
+                await navigator.clipboard.writeText(latestSearchQuery);
+                copySearchStatus.textContent = "Zoekopdracht gekopieerd. Plak dit in Google, Coolblue of Bol.";
+            } catch (error) {
+                copySearchStatus.textContent = "Kopieren lukte niet. Selecteer en kopieer handmatig.";
+            }
+        });
+    </script>
+</body>
+</html>
