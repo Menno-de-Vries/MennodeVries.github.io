@@ -280,6 +280,9 @@ a {
 }
 
 .site-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     padding: 0.52rem 0.9rem;
     border-radius: 999px;
