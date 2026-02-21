@@ -20,7 +20,7 @@
                 <a href="index.html">Home</a>
                 <a href="About_Me/AboutMe.html">About Me</a>
                 <a href="Projecten.html">Projecten</a>
-                <a class="is-active" href="Keuzehulp.html">Systeemadvies</a>
+                <a class="is-active" aria-current="page" href="Keuzehulp.html">Systeemadvies</a>
                 <a href="Cybersecurity.html">Cybersecurity</a>
                 <a href="Blog.html">Blog</a>
                 <a href="Contact.html">Contact</a>
@@ -47,7 +47,7 @@
                         <p>Vergelijk laptop of desktop op basis van gebruik, prestaties en budget. Met de gamecheck zie je snel welke games haalbaar zijn en waar upgrades het meeste effect geven.</p>
                     </div>
                     <figure class="advisor-hero-media">
-                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1600&q=80" alt="Moderne laptop en desktop setup op bureau">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1600&q=80" alt="Moderne laptop en desktop setup op bureau" fetchpriority="high" decoding="async">
                     </figure>
                 </div>
             </section>
@@ -59,7 +59,7 @@
                     <form id="advisor-form" class="advisor-form">
                         <div class="form-group">
                             <label for="budget">Budget (EUR)</label>
-                            <input type="number" id="budget" name="budget" min="300" max="5000" step="50" value="1000">
+                            <input type="number" id="budget" name="budget" min="300" max="5000" step="50" value="1000" inputmode="numeric" autocomplete="off">
                         </div>
 
                         <div class="form-group">
@@ -258,11 +258,11 @@
                 <h2>Inspiratie</h2>
                 <div class="advisor-photo-grid">
                     <article class="card advisor-photo-card">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="Laptop op bureau met code editor open">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="Laptop op bureau met code editor open" loading="lazy" decoding="async">
                         <p>Mobiele setup voor studie, development en dagelijks gebruik.</p>
                     </article>
                     <article class="card advisor-photo-card">
-                        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1400&q=80" alt="Krachtige desktop setup met meerdere monitoren">
+                        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1400&q=80" alt="Krachtige desktop setup met meerdere monitoren" loading="lazy" decoding="async">
                         <p>Desktop setup voor hogere prestaties, gaming en zware workloads.</p>
                     </article>
                 </div>

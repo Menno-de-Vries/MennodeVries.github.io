@@ -23,7 +23,7 @@
                 <a href="Keuzehulp.html">Systeemadvies</a>
                 <a href="Cybersecurity.html">Cybersecurity</a>
                 <a href="Blog.html">Blog</a>
-                <a class="is-active" href="Contact.html">Contact</a>
+                <a class="is-active" aria-current="page" href="Contact.html">Contact</a>
                             <div class="lang-switcher">
                     <label for="lang-select">Taal</label>
                     <select id="lang-select" class="js-language-select" aria-label="Selecteer taal">
@@ -49,26 +49,26 @@
                 <form class="contact-form" action="https://formsubmit.co/menno.de.vries302@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="Nieuw bericht via mennodevries portfolio">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="_honey" style="display:none">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                     <div class="form-group">
                         <label for="name">Naam</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required autocomplete="name">
                     </div>
 
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required autocomplete="email" inputmode="email">
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Onderwerp</label>
-                        <input type="text" id="subject" name="subject" required>
+                        <input type="text" id="subject" name="subject" required autocomplete="off">
                     </div>
 
                     <div class="form-group">
                         <label for="message">Bericht</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <textarea id="message" name="message" rows="6" required autocomplete="off"></textarea>
                     </div>
 
                     <button class="btn" type="submit">Verzenden</button>
