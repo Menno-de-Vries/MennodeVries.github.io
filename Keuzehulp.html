@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Keuzehulp | Menno de Vries</title>
+    <title>Systeemadvies en Gamecheck | Menno de Vries</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
                 <a href="index.html">Home</a>
                 <a href="About_Me/AboutMe.html">About Me</a>
                 <a href="Projecten.html">Projecten</a>
-                <a class="is-active" href="Keuzehulp.html">PC Keuzehulp</a>
+                <a class="is-active" href="Keuzehulp.html">Systeemadvies</a>
                 <a href="Cybersecurity.html">Cybersecurity</a>
                 <a href="Blog.html">Blog</a>
                 <a href="Contact.html">Contact</a>
@@ -42,9 +42,9 @@
             <section class="hero welcome-hero">
                 <div class="welcome-grid">
                     <div>
-                        <p class="meta">Keuzehulp</p>
-                        <h1>Desktop of laptop kiezen</h1>
-                        <p>Deze pagina helpt je om een eerste richting te bepalen voor een desktop of laptop, op basis van budget, draagbaarheid, prestaties en gebruiksscenario.</p>
+                        <p class="meta">Systeemadvies</p>
+                        <h1>Systeemadvies en gamecheck</h1>
+                        <p>Vergelijk laptop of desktop op basis van gebruik, prestaties en budget. Met de gamecheck zie je snel welke games haalbaar zijn en waar upgrades het meeste effect geven.</p>
                     </div>
                     <figure class="advisor-hero-media">
                         <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1600&q=80" alt="Moderne laptop en desktop setup op bureau">
@@ -54,7 +54,7 @@
 
             <section class="section advisor-layout">
                 <article class="card advisor-input-card">
-                    <h2>Vul je voorkeuren in</h2>
+                    <h2>Voorkeuren en gebruik</h2>
                     <p class="advisor-helper">Geen zorgen als je niet alles technisch weet. Kies vooral wat het beste bij jouw gebruik past.</p>
                     <form id="advisor-form" class="advisor-form">
                         <div class="form-group">
@@ -148,6 +148,113 @@
             </section>
 
             <section class="section">
+                <article class="card">
+                    <h2>Game compatibiliteit en prestaties</h2>
+                    <p>Gebruik een snelle systeemscan of vul handmatig je hardware in. De tool schat per game de haalbare settings en geeft gericht upgrade-advies.</p>
+                    <div class="grid two">
+                        <article class="card">
+                            <h3>Systeemprofiel</h3>
+                            <div class="form-group">
+                                <label for="scan-device-type">Systeemtype</label>
+                                <select id="scan-device-type">
+                                    <option value="laptop">Laptop</option>
+                                    <option value="desktop">Desktop</option>
+                                </select>
+                                <p id="scan-device-match" class="scan-match-note">Nog niet gedetecteerd. Kies handmatig indien nodig.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="scan-cpu-tier">CPU-klasse</label>
+                                <select id="scan-cpu-tier">
+                                    <option value="entry">Instap</option>
+                                    <option value="mid">Middenklasse</option>
+                                    <option value="high">High-end</option>
+                                    <option value="ultra">Topklasse</option>
+                                </select>
+                                <p id="scan-cpu-match" class="scan-match-note">Nog niet gedetecteerd. Controleer je processor voor nauwkeurigheid.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="scan-gpu-tier">GPU-klasse</label>
+                                <select id="scan-gpu-tier">
+                                    <option value="entry">Instap</option>
+                                    <option value="mid">Middenklasse</option>
+                                    <option value="high">High-end</option>
+                                    <option value="ultra">Topklasse</option>
+                                </select>
+                                <p id="scan-gpu-match" class="scan-match-note">Nog niet gedetecteerd. Browserdetectie kan afwijken door drivers of energiestand.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="scan-ram-gb">RAM (GB)</label>
+                                <select id="scan-ram-gb">
+                                    <option value="8">8</option>
+                                    <option value="16" selected>16</option>
+                                    <option value="32">32</option>
+                                    <option value="64">64</option>
+                                </select>
+                                <p id="scan-ram-match" class="scan-match-note">Nog niet gedetecteerd. Browser-RAM is een indicatie.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="scan-resolution">Resolutie</label>
+                                <select id="scan-resolution">
+                                    <option value="1080p">1080p</option>
+                                    <option value="1440p">1440p</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="target-setting">Gewenste minimale settings</label>
+                                <select id="target-setting">
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                    <option value="ultra">Ultra</option>
+                                </select>
+                            </div>
+                            <div class="advisor-actions">
+                                <button class="btn btn-small" type="button" id="scan-laptop-btn">Systeemscan uitvoeren</button>
+                                <button class="btn btn-small" type="button" id="analyze-games-btn">Analyse starten</button>
+                            </div>
+                            <p id="scan-status" class="advisor-copy-status" aria-live="polite">Nog geen systeemscan uitgevoerd.</p>
+                        </article>
+
+                        <article class="card">
+                            <h3>Game selectie</h3>
+                            <p>Kies zelf een set games. Geen keuze? Dan gebruiken we automatisch de 10 populairste titels.</p>
+                            <div class="game-select-wrap">
+                                <label for="game-select">Te analyseren games</label>
+                                <select id="game-select" class="game-multi-select" multiple size="10" aria-describedby="game-select-help">
+                                    <option value="Fortnite">Fortnite</option>
+                                    <option value="Call of Duty: Warzone">Call of Duty: Warzone</option>
+                                    <option value="Minecraft">Minecraft</option>
+                                    <option value="Counter-Strike 2">Counter-Strike 2</option>
+                                    <option value="Grand Theft Auto V">Grand Theft Auto V</option>
+                                    <option value="Valorant">Valorant</option>
+                                    <option value="League of Legends">League of Legends</option>
+                                    <option value="EA Sports FC 26">EA Sports FC 26</option>
+                                    <option value="Apex Legends">Apex Legends</option>
+                                    <option value="Roblox">Roblox</option>
+                                </select>
+                                <p id="game-select-help" class="advisor-copy-status">Gebruik Ctrl (Windows) of Cmd (Mac) om meerdere games tegelijk te selecteren.</p>
+                                <div class="advisor-actions advisor-actions-inline">
+                                    <button class="btn btn-small" type="button" id="select-popular-btn">Selecteer top 10</button>
+                                    <button class="btn btn-small btn-ghost" type="button" id="clear-games-btn">Leeg selectie</button>
+                                </div>
+                                <div id="selected-games-preview" class="advisor-option-row" aria-live="polite"></div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <article class="card">
+                        <h3>Resultaat: speelbaarheid per game</h3>
+                        <ul id="game-results" class="advisor-result-list">
+                            <li>Voer een scan uit of vul je specs in en klik op "Analyse starten".</li>
+                        </ul>
+                        <h3>Upgrade-advies voor hogere settings</h3>
+                        <ul id="upgrade-advice" class="advisor-result-list">
+                            <li>Hier verschijnt upgrade-advies op basis van laptop of desktop.</li>
+                        </ul>
+                    </article>
+                </article>
+            </section>
+
+            <section class="section">
                 <h2>Inspiratie</h2>
                 <div class="advisor-photo-grid">
                     <article class="card advisor-photo-card">
@@ -163,7 +270,7 @@
 
             <section class="section advisor-disclaimer">
                 <h2>Disclaimer</h2>
-                <p>Deze keuzehulp is bedoeld als ondersteuning bij het maken van een keuze en geeft een indicatief advies. Het advies is niet definitief en vervangt geen persoonlijk of technisch aankoopadvies.</p>
+                <p>Deze keuzehulp is bedoeld als ondersteuning bij het maken van een keuze en geeft een indicatief advies. De game-check is een inschatting op basis van gedetecteerde en ingevulde hardware en is geen daadwerkelijke benchmark of praktijktest per game. Het advies is niet definitief en vervangt geen persoonlijk of technisch aankoopadvies.</p>
             </section>
         </div>
     </main>
@@ -183,7 +290,333 @@
         const adviceTags = document.getElementById("advice-tags");
         const copySearchButton = document.getElementById("copy-search-btn");
         const copySearchStatus = document.getElementById("copy-search-status");
+        const scanLaptopButton = document.getElementById("scan-laptop-btn");
+        const analyzeGamesButton = document.getElementById("analyze-games-btn");
+        const scanStatus = document.getElementById("scan-status");
+        const gameResults = document.getElementById("game-results");
+        const upgradeAdvice = document.getElementById("upgrade-advice");
+        const scanDeviceType = document.getElementById("scan-device-type");
+        const scanCpuTier = document.getElementById("scan-cpu-tier");
+        const scanGpuTier = document.getElementById("scan-gpu-tier");
+        const scanRamGb = document.getElementById("scan-ram-gb");
+        const scanResolution = document.getElementById("scan-resolution");
+        const targetSetting = document.getElementById("target-setting");
+        const scanDeviceMatch = document.getElementById("scan-device-match");
+        const scanCpuMatch = document.getElementById("scan-cpu-match");
+        const scanGpuMatch = document.getElementById("scan-gpu-match");
+        const scanRamMatch = document.getElementById("scan-ram-match");
+        const gameSelect = document.getElementById("game-select");
+        const selectPopularButton = document.getElementById("select-popular-btn");
+        const clearGamesButton = document.getElementById("clear-games-btn");
+        const selectedGamesPreview = document.getElementById("selected-games-preview");
         let latestSearchQuery = "";
+        let hasManualSpecOverride = false;
+        const tierToScore = { entry: 1, mid: 2, high: 3, ultra: 4 };
+        const tierLabels = {
+            entry: "instap",
+            mid: "middenklasse",
+            high: "high-end",
+            ultra: "topklasse"
+        };
+        const settingOrder = ["low", "medium", "high", "ultra"];
+        const popularGames = [
+            "Fortnite",
+            "Call of Duty: Warzone",
+            "Minecraft",
+            "Counter-Strike 2",
+            "Grand Theft Auto V",
+            "Valorant",
+            "League of Legends",
+            "EA Sports FC 26",
+            "Apex Legends",
+            "Roblox"
+        ];
+        const gameRequirements = {
+            "Fortnite": { low: { cpu: 1, gpu: 1, ram: 8 }, medium: { cpu: 2, gpu: 2, ram: 8 }, high: { cpu: 2, gpu: 3, ram: 16 }, ultra: { cpu: 3, gpu: 4, ram: 16 } },
+            "Call of Duty: Warzone": { low: { cpu: 2, gpu: 2, ram: 8 }, medium: { cpu: 2, gpu: 3, ram: 16 }, high: { cpu: 3, gpu: 4, ram: 16 }, ultra: { cpu: 4, gpu: 4, ram: 32 } },
+            "Minecraft": { low: { cpu: 1, gpu: 1, ram: 8 }, medium: { cpu: 1, gpu: 2, ram: 8 }, high: { cpu: 2, gpu: 2, ram: 16 }, ultra: { cpu: 2, gpu: 3, ram: 16 } },
+            "Counter-Strike 2": { low: { cpu: 1, gpu: 1, ram: 8 }, medium: { cpu: 2, gpu: 2, ram: 8 }, high: { cpu: 2, gpu: 3, ram: 16 }, ultra: { cpu: 3, gpu: 4, ram: 16 } },
+            "Grand Theft Auto V": { low: { cpu: 1, gpu: 2, ram: 8 }, medium: { cpu: 2, gpu: 2, ram: 8 }, high: { cpu: 2, gpu: 3, ram: 16 }, ultra: { cpu: 3, gpu: 4, ram: 16 } },
+            "Valorant": { low: { cpu: 1, gpu: 1, ram: 8 }, medium: { cpu: 1, gpu: 2, ram: 8 }, high: { cpu: 2, gpu: 2, ram: 16 }, ultra: { cpu: 2, gpu: 3, ram: 16 } },
+            "League of Legends": { low: { cpu: 1, gpu: 1, ram: 8 }, medium: { cpu: 1, gpu: 1, ram: 8 }, high: { cpu: 2, gpu: 2, ram: 8 }, ultra: { cpu: 2, gpu: 3, ram: 16 } },
+            "EA Sports FC 26": { low: { cpu: 1, gpu: 2, ram: 8 }, medium: { cpu: 2, gpu: 2, ram: 8 }, high: { cpu: 2, gpu: 3, ram: 16 }, ultra: { cpu: 3, gpu: 4, ram: 16 } },
+            "Apex Legends": { low: { cpu: 2, gpu: 2, ram: 8 }, medium: { cpu: 2, gpu: 3, ram: 16 }, high: { cpu: 3, gpu: 3, ram: 16 }, ultra: { cpu: 3, gpu: 4, ram: 16 } },
+            "Roblox": { low: { cpu: 1, gpu: 1, ram: 4 }, medium: { cpu: 1, gpu: 1, ram: 8 }, high: { cpu: 1, gpu: 2, ram: 8 }, ultra: { cpu: 2, gpu: 2, ram: 16 } }
+        };
+
+        const normalizeRam = (ram) => {
+            if (ram <= 8) return 8;
+            if (ram <= 16) return 16;
+            if (ram <= 32) return 32;
+            return 64;
+        };
+
+        const tierLabel = (tierValue) => {
+            const map = {
+                entry: "Instap",
+                mid: "Middenklasse",
+                high: "High-end",
+                ultra: "Topklasse"
+            };
+            return map[tierValue] || tierValue;
+        };
+
+        const getCpuTierReference = (tierValue) => {
+            const map = {
+                entry: "Intel Core i3 (10e-12e gen) of AMD Ryzen 3 (3000-5000).",
+                mid: "Intel Core i5 (10e-13e gen) of AMD Ryzen 5 (3600-7600).",
+                high: "Intel Core i7 (11e-14e gen) of AMD Ryzen 7 (5000-7800).",
+                ultra: "Intel Core i9 (12e-14e gen) of AMD Ryzen 9 (5900X-7950X)."
+            };
+            return map[tierValue] || "Geen referentie beschikbaar.";
+        };
+
+        const getGpuTierReference = (tierValue) => {
+            const map = {
+                entry: "NVIDIA GTX 1050 Ti/1650, RTX 2050 of AMD RX 560/6500M.",
+                mid: "NVIDIA RTX 2060/3060 of AMD RX 6600/7600.",
+                high: "NVIDIA RTX 3070/4070 of AMD RX 6800/7800 XT.",
+                ultra: "NVIDIA RTX 4080/4090 of AMD RX 7900 XT/XTX."
+            };
+            return map[tierValue] || "Geen referentie beschikbaar.";
+        };
+
+        const getRamReference = (ramValue) => {
+            const ram = Number(ramValue || 16);
+            if (ram <= 8) return "8 GB = instapniveau voor lichte games en e-sports.";
+            if (ram <= 16) return "16 GB = gangbare middenklasse voor modern gaming gebruik.";
+            if (ram <= 32) return "32 GB = high-end voor zwaardere games en multitasking.";
+            return "64 GB = topklasse voor zware workloads, streaming en content workflows.";
+        };
+
+        const getAdvisoryCpuTier = (usage, power, futureproof) => {
+            if (power === "extreme" || futureproof >= 6) return "ultra";
+            if (usage === "creative" || (usage === "gaming" && power === "high")) return "high";
+            if (usage === "gaming" || usage === "mixed" || power === "high") return "mid";
+            return "entry";
+        };
+
+        const getAdvisoryGpuTier = (usage, power, budget) => {
+            if (usage === "school") return "entry";
+            if (power === "extreme" || budget >= 1800) return "ultra";
+            if (usage === "gaming" || usage === "creative" || power === "high" || budget >= 1300) return "high";
+            if (usage === "mixed" || budget >= 1000) return "mid";
+            return "entry";
+        };
+
+        const setScanMatchNotes = (notes) => {
+            if (notes.device) scanDeviceMatch.textContent = notes.device;
+            if (notes.cpu) scanCpuMatch.textContent = notes.cpu;
+            if (notes.gpu) scanGpuMatch.textContent = notes.gpu;
+            if (notes.ram) scanRamMatch.textContent = notes.ram;
+        };
+
+        const markManualSpecOverride = () => {
+            hasManualSpecOverride = true;
+        };
+
+        [scanDeviceType, scanCpuTier, scanGpuTier, scanRamGb].forEach((element) => {
+            element.addEventListener("change", markManualSpecOverride);
+        });
+
+        scanDeviceType.addEventListener("change", () => {
+            scanDeviceMatch.textContent = `Handmatig ingesteld op ${scanDeviceType.value === "laptop" ? "Laptop" : "Desktop"}.`;
+        });
+
+        scanCpuTier.addEventListener("change", () => {
+            scanCpuMatch.textContent = `Handmatig aangepast naar ${tierLabel(scanCpuTier.value)}. Referentie: ${getCpuTierReference(scanCpuTier.value)}`;
+        });
+
+        scanGpuTier.addEventListener("change", () => {
+            scanGpuMatch.textContent = `Handmatig aangepast naar ${tierLabel(scanGpuTier.value)}. Referentie: ${getGpuTierReference(scanGpuTier.value)}`;
+        });
+
+        scanRamGb.addEventListener("change", () => {
+            scanRamMatch.textContent = `Handmatig ingesteld op ${scanRamGb.value} GB RAM. Referentie: ${getRamReference(scanRamGb.value)}`;
+        });
+
+        const getGpuTierFromRenderer = (renderer) => {
+            const value = (renderer || "").toLowerCase();
+            if (!value) return "mid";
+            if (value.includes("rtx 4090") || value.includes("rtx 4080") || value.includes("rx 7900")) return "ultra";
+            if (value.includes("rtx 4070") || value.includes("rtx 4060") || value.includes("rx 7800") || value.includes("rx 7700")) return "high";
+            if (value.includes("rtx 30") || value.includes("rx 67") || value.includes("iris xe")) return "mid";
+            if (value.includes("gtx") || value.includes("vega") || value.includes("uhd")) return "entry";
+            return "mid";
+        };
+
+        const getCpuTierFromCores = (cores) => {
+            const count = Number(cores || 4);
+            if (count >= 16) return "ultra";
+            if (count >= 12) return "high";
+            if (count >= 8) return "mid";
+            return "entry";
+        };
+
+        const getWebGlRenderer = () => {
+            try {
+                const canvas = document.createElement("canvas");
+                const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+                if (!gl) return "";
+                const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+                if (!debugInfo) return "";
+                return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) || "";
+            } catch (error) {
+                return "";
+            }
+        };
+
+        const getWebGlVendor = () => {
+            try {
+                const canvas = document.createElement("canvas");
+                const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+                if (!gl) return "";
+                const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+                if (!debugInfo) return "";
+                return gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) || "";
+            } catch (error) {
+                return "";
+            }
+        };
+
+        const getSelectedGames = () => {
+            const selected = Array.from(gameSelect.selectedOptions).map((option) => option.value);
+            return selected.length ? selected : popularGames;
+        };
+
+        const renderSelectedGamesPreview = () => {
+            const selected = Array.from(gameSelect.selectedOptions).map((option) => option.value);
+            const source = selected.length ? selected : popularGames;
+            const prefix = selected.length ? "Gekozen games:" : "Geen keuze gemaakt, standaard top 10:";
+            selectedGamesPreview.innerHTML = `<span class="advisor-option">${prefix}</span>${source.map((game) => `<span class="advisor-option">${game}</span>`).join("")}`;
+        };
+
+        const getEffectiveTiers = (cpuTier, gpuTier, resolution) => {
+            const gpuPenalty = resolution === "1440p" ? 1 : 0;
+            const cpuPenalty = resolution === "1440p" ? 0 : 0;
+            return {
+                cpu: Math.max(1, tierToScore[cpuTier] - cpuPenalty),
+                gpu: Math.max(1, tierToScore[gpuTier] - gpuPenalty)
+            };
+        };
+
+        const canRunSetting = (gameName, settingName, cpuTier, gpuTier, ram, resolution) => {
+            const req = gameRequirements[gameName][settingName];
+            const effective = getEffectiveTiers(cpuTier, gpuTier, resolution);
+            return effective.cpu >= req.cpu && effective.gpu >= req.gpu && ram >= req.ram;
+        };
+
+        const getMaxSetting = (gameName, cpuTier, gpuTier, ram, resolution) => {
+            for (let idx = settingOrder.length - 1; idx >= 0; idx -= 1) {
+                const candidate = settingOrder[idx];
+                if (canRunSetting(gameName, candidate, cpuTier, gpuTier, ram, resolution)) {
+                    return candidate;
+                }
+            }
+            return "low";
+        };
+
+        const settingLabel = (settingName) => {
+            const map = { low: "Low", medium: "Medium", high: "High", ultra: "Ultra" };
+            return map[settingName] || "Low";
+        };
+
+        const compareSetting = (left, right) => settingOrder.indexOf(left) - settingOrder.indexOf(right);
+
+        const getBottlenecksForTarget = (gameName, target, cpuTier, gpuTier, ram, resolution) => {
+            const req = gameRequirements[gameName][target];
+            const effective = getEffectiveTiers(cpuTier, gpuTier, resolution);
+            const bottlenecks = [];
+            if (effective.cpu < req.cpu) bottlenecks.push("CPU");
+            if (effective.gpu < req.gpu) bottlenecks.push("GPU");
+            if (ram < req.ram) bottlenecks.push("RAM");
+            return bottlenecks;
+        };
+
+        const getTargetRequirement = (games, target, resolution) => {
+            const gpuPenalty = resolution === "1440p" ? 1 : 0;
+            const values = games.map((game) => gameRequirements[game][target]);
+            return {
+                cpu: Math.max(...values.map((value) => value.cpu)),
+                gpu: Math.max(...values.map((value) => value.gpu + gpuPenalty)),
+                ram: Math.max(...values.map((value) => value.ram))
+            };
+        };
+
+        const tierFromValue = (value) => {
+            if (value <= 1) return "entry";
+            if (value === 2) return "mid";
+            if (value === 3) return "high";
+            return "ultra";
+        };
+
+        const buildUpgradeAdvice = (deviceType, cpuTier, gpuTier, ram, games, target, resolution) => {
+            const requirement = getTargetRequirement(games, target, resolution);
+            const currentCpu = tierToScore[cpuTier];
+            const currentGpu = tierToScore[gpuTier];
+            const cpuGap = Math.max(0, requirement.cpu - currentCpu);
+            const gpuGap = Math.max(0, requirement.gpu - currentGpu);
+            const ramGap = Math.max(0, requirement.ram - ram);
+
+            if (cpuGap === 0 && gpuGap === 0 && ramGap === 0) {
+                return ["Je systeem zit al op of boven je gekozen settings voor deze game-selectie."];
+            }
+            const recommendations = [];
+            const typeLabel = deviceType === "laptop" ? "laptop" : "desktop";
+
+            if (gpuGap > 0) {
+                const targetGpuTier = tierFromValue(Math.min(4, currentGpu + gpuGap));
+                if (deviceType === "desktop") {
+                    recommendations.push(`Upgrade eerst de videokaart (van ${tierLabels[gpuTier]} naar minimaal ${tierLabels[targetGpuTier]}) voor hogere settings.`);
+                } else {
+                    recommendations.push("GPU-upgrade in een laptop is meestal niet mogelijk. Kies een krachtigere gaming laptop of gebruik eGPU als je laptop dat ondersteunt.");
+                }
+            }
+
+            if (cpuGap > 0) {
+                const targetCpuTier = tierFromValue(Math.min(4, currentCpu + cpuGap));
+                if (deviceType === "desktop") {
+                    recommendations.push(`Overweeg daarna een CPU-upgrade (van ${tierLabels[cpuTier]} richting ${tierLabels[targetCpuTier]}) om bottlenecks te voorkomen.`);
+                } else {
+                    recommendations.push("CPU-upgrade in een laptop is meestal niet mogelijk. Kies bij vervanging een model met sterkere CPU.");
+                }
+            }
+
+            if (ramGap > 0) {
+                const targetRam = ram + ramGap;
+                recommendations.push(deviceType === "desktop"
+                    ? `Verhoog RAM van ${ram} GB naar minimaal ${targetRam} GB.`
+                    : `Controleer of je laptop uitbreidbaar is en verhoog RAM van ${ram} GB naar minimaal ${targetRam} GB.`);
+            }
+
+            recommendations.push(typeLabel === "desktop"
+                ? "Desktop route: GPU -> CPU -> RAM geeft meestal de beste winst per euro."
+                : "Laptop route: optimaliseer koeling/energy profile en overweeg op termijn een nieuwer model.");
+            return recommendations;
+        };
+
+        const analyzeGames = () => {
+            const deviceType = scanDeviceType.value;
+            const cpuTier = scanCpuTier.value;
+            const gpuTier = scanGpuTier.value;
+            const ram = Number(scanRamGb.value || 16);
+            const resolution = scanResolution.value;
+            const target = targetSetting.value;
+            const games = getSelectedGames();
+
+            const rows = games.map((game) => {
+                const maxSetting = getMaxSetting(game, cpuTier, gpuTier, ram, resolution);
+                const meetsTarget = compareSetting(maxSetting, target) >= 0;
+                const status = meetsTarget ? "Haalt doelsetting" : "Onder doelsetting";
+                const bottlenecks = meetsTarget ? [] : getBottlenecksForTarget(game, target, cpuTier, gpuTier, ram, resolution);
+                const bottleneckText = bottlenecks.length ? ` Bottleneck: ${bottlenecks.join(", ")}.` : "";
+                return `<li><strong>${game}:</strong> speelbaar tot <strong>${settingLabel(maxSetting)}</strong> op ${resolution} (${status}).${bottleneckText}</li>`;
+            });
+            gameResults.innerHTML = rows.join("");
+
+            const upgrades = buildUpgradeAdvice(deviceType, cpuTier, gpuTier, ram, games, target, resolution);
+            upgradeAdvice.innerHTML = upgrades.map((text) => `<li>${text}</li>`).join("");
+        };
 
         const getDeviceType = (portability, usage, power, budget) => {
             if (portability === "high") return "Laptop";
@@ -283,6 +716,8 @@
             const deviceType = getDeviceType(portability, usage, power, budget);
             const cpuAdvice = getCpuAdvice(usage, power, futureproof);
             const gpuAdvice = getGpuAdvice(usage, power, budget);
+            const advisoryCpuTier = getAdvisoryCpuTier(usage, power, futureproof);
+            const advisoryGpuTier = getAdvisoryGpuTier(usage, power, budget);
             const storageAdvice = `Opslagadvies: ${toStorageText(storage)} als startpunt.`;
             const ramAdvice = `Werkgeheugen (RAM): begin bij ${ram} GB.`;
             const batteryAdvice = batteryAdviceMap[battery];
@@ -299,7 +734,9 @@
             adviceList.innerHTML = `
                 <li><strong>Type:</strong> ${deviceType} past het beste bij jouw voorkeuren.</li>
                 <li><strong>Processor:</strong> ${cpuAdvice}</li>
+                <li><strong>CPU referentieklasse:</strong> ${tierLabel(advisoryCpuTier)}. ${getCpuTierReference(advisoryCpuTier)}</li>
                 <li><strong>Videokaart:</strong> ${gpuAdvice}</li>
+                <li><strong>GPU referentieklasse:</strong> ${tierLabel(advisoryGpuTier)}. ${getGpuTierReference(advisoryGpuTier)}</li>
                 <li><strong>Geheugen:</strong> ${ramAdvice}</li>
                 <li><strong>Opslag:</strong> ${storageAdvice}</li>
                 <li><strong>Batterij:</strong> ${batteryAdvice}</li>
@@ -346,6 +783,71 @@
             copySearchStatus.textContent = `Voorbeeld zoekopdracht klaar: ${latestSearchQuery}`;
         });
 
+        scanLaptopButton.addEventListener("click", async () => {
+            const cores = navigator.hardwareConcurrency || 8;
+            const memory = navigator.deviceMemory || 8;
+            const renderer = getWebGlRenderer();
+            const vendor = getWebGlVendor();
+            const detectedCpuTier = getCpuTierFromCores(cores);
+            const detectedGpuTier = getGpuTierFromRenderer(renderer);
+            const normalizedRam = normalizeRam(memory || 8);
+            const currentRamValue = Number(scanRamGb.value || 16);
+            const safeRamValue = hasManualSpecOverride ? Math.max(currentRamValue, normalizedRam) : normalizedRam;
+
+            if (!hasManualSpecOverride) {
+                scanCpuTier.value = detectedCpuTier;
+                scanGpuTier.value = detectedGpuTier;
+                scanRamGb.value = String(safeRamValue);
+            }
+
+            const platform = navigator.userAgentData?.platform || navigator.platform || "onbekend";
+            const architecture = navigator.userAgentData?.architecture || "onbekend";
+            const mobileHint = typeof navigator.userAgentData?.mobile === "boolean"
+                ? (navigator.userAgentData.mobile ? "mobiel device" : "niet-mobiel device")
+                : "onbekend";
+
+            const shortRenderer = renderer ? renderer.slice(0, 80) : "onbekend";
+            const shortVendor = vendor ? vendor.slice(0, 40) : "onbekend";
+            const overwriteNote = hasManualSpecOverride
+                ? "Handmatige invoer behouden."
+                : "Scanwaardes toegepast.";
+
+            const cpuNote = `CPU-match: ${tierLabel(detectedCpuTier)} op basis van ${cores} logische cores. Referentie: ${getCpuTierReference(detectedCpuTier)}`;
+            const gpuSource = shortRenderer === "onbekend"
+                ? "renderer niet beschikbaar in browser"
+                : `renderer "${shortRenderer}"`;
+            const gpuNote = `GPU-match: ${tierLabel(detectedGpuTier)} op basis van ${gpuSource}. Referentie: ${getGpuTierReference(detectedGpuTier)}`;
+            const ramNote = `RAM-match: browser geeft ${normalizedRam} GB aan (kan lager zijn dan je echte RAM). Ingesteld op ${safeRamValue} GB. Referentie: ${getRamReference(safeRamValue)}`;
+            const deviceNote = `Systeemtype: ${scanDeviceType.value === "laptop" ? "Laptop" : "Desktop"} (${overwriteNote})`;
+            setScanMatchNotes({
+                device: deviceNote,
+                cpu: cpuNote,
+                gpu: gpuNote,
+                ram: ramNote
+            });
+            scanStatus.textContent = `Scan klaar. ${overwriteNote} Platform: ${platform} (${architecture}, ${mobileHint}). Cores: ${cores}. RAM browserindicatie: ${normalizedRam} GB (kan lager zijn dan echt). GPU: ${shortVendor} - ${shortRenderer}.`;
+            analyzeGames();
+        });
+
+        gameSelect.addEventListener("change", renderSelectedGamesPreview);
+
+        selectPopularButton.addEventListener("click", () => {
+            Array.from(gameSelect.options).forEach((option) => {
+                option.selected = true;
+            });
+            renderSelectedGamesPreview();
+        });
+
+        clearGamesButton.addEventListener("click", () => {
+            Array.from(gameSelect.options).forEach((option) => {
+                option.selected = false;
+            });
+            renderSelectedGamesPreview();
+        });
+
+        analyzeGamesButton.addEventListener("click", analyzeGames);
+        renderSelectedGamesPreview();
+
         copySearchButton.addEventListener("click", async () => {
             if (!latestSearchQuery) return;
             try {
@@ -358,4 +860,5 @@
     </script>
 </body>
 </html>
+
 

@@ -132,6 +132,22 @@ body.theme-dark .advisor-helper {
     color: #c7d7e5;
 }
 
+body.theme-dark .scan-match-note {
+    background: rgba(53, 188, 192, 0.08);
+    border-color: #3b5872;
+    color: #cfe0ee;
+}
+
+body.theme-dark .game-select-wrap label {
+    color: #e3f0ff;
+}
+
+body.theme-dark .game-multi-select {
+    background: #122131;
+    color: #e3f0ff;
+    border-color: #3b5872;
+}
+
 body.theme-dark .advisor-fieldset {
     background: #132434;
     border-color: #3b5872;
@@ -1198,6 +1214,43 @@ textarea:focus {
     gap: 0.45rem;
 }
 
+.advisor-actions-inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.game-select-wrap {
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.35rem 0;
+}
+
+.game-select-wrap label {
+    font-weight: 700;
+    color: var(--brand-strong);
+}
+
+.scan-match-note {
+    margin-top: 0.4rem;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--surface-soft);
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.game-multi-select {
+    width: 100%;
+    min-height: 220px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 0.45rem;
+    line-height: 1.4;
+}
+
 .advisor-copy-status {
     color: var(--muted);
     font-size: 0.88rem;
@@ -1334,6 +1387,18 @@ textarea:focus {
 
     .advisor-photo-grid {
         grid-template-columns: 1fr;
+    }
+
+    .game-multi-select {
+        min-height: 180px;
+    }
+
+    .advisor-actions-inline {
+        flex-direction: column;
+    }
+
+    .advisor-actions-inline .btn {
+        width: 100%;
     }
 
     .code-editor {
